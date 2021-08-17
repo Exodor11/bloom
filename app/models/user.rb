@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :followers, class_name: "Contact", foreign_key: "follower_id"
   has_many :followings, class_name: "Contact", foreign_key: "following_id"
 
+  has_one_attached :photo
 
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
