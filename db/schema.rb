@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2021_08_17_083527) do
 ActiveRecord::Schema.define(version: 2021_08_17_080434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "post_saveds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_saveds_on_post_id"
+    t.index ["user_id"], name: "index_post_saveds_on_user_id"
+  end
+
+  create_table "post_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+  end
+
+  create_table "post_upvoteds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_upvoteds_on_post_id"
+    t.index ["user_id"], name: "index_post_upvoteds_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
     t.bigint "followed_id"
@@ -67,6 +94,13 @@ ActiveRecord::Schema.define(version: 2021_08_17_080434) do
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "post_saveds", "posts"
+  add_foreign_key "post_saveds", "users"
+  add_foreign_key "post_tags", "posts"
+  add_foreign_key "post_tags", "tags"
+  add_foreign_key "post_upvoteds", "posts"
+  add_foreign_key "post_upvoteds", "users"
 
   add_foreign_key "contacts", "users", column: "followed_id"
   add_foreign_key "contacts", "users", column: "following_id"
