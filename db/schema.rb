@@ -11,10 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_08_17_083527) do
-ActiveRecord::Schema.define(version: 2021_08_17_080434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "followed_id"
+    t.bigint "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_contacts_on_followed_id"
+    t.index ["following_id"], name: "index_contacts_on_following_id"
+  end
 
   create_table "post_saveds", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -41,14 +49,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_080434) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_post_upvoteds_on_post_id"
     t.index ["user_id"], name: "index_post_upvoteds_on_user_id"
-
-  create_table "contacts", force: :cascade do |t|
-    t.bigint "followed_id"
-    t.bigint "following_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_id"], name: "index_contacts_on_followed_id"
-    t.index ["following_id"], name: "index_contacts_on_following_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -95,15 +95,14 @@ ActiveRecord::Schema.define(version: 2021_08_17_080434) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "users", column: "followed_id"
+  add_foreign_key "contacts", "users", column: "following_id"
   add_foreign_key "post_saveds", "posts"
   add_foreign_key "post_saveds", "users"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "post_upvoteds", "posts"
   add_foreign_key "post_upvoteds", "users"
-
-  add_foreign_key "contacts", "users", column: "followed_id"
-  add_foreign_key "contacts", "users", column: "following_id"
   add_foreign_key "posts", "users"
   add_foreign_key "user_tags", "tags"
   add_foreign_key "user_tags", "users"
