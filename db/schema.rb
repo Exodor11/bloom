@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_151054) do
+ActiveRecord::Schema.define(version: 2021_08_17_080434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "followed_id"
+    t.bigint "following_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_contacts_on_followed_id"
+    t.index ["following_id"], name: "index_contacts_on_following_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -23,6 +32,22 @@ ActiveRecord::Schema.define(version: 2021_08_16_151054) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_tags", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tag_id"], name: "index_user_tags_on_tag_id"
+    t.index ["user_id"], name: "index_user_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +68,10 @@ ActiveRecord::Schema.define(version: 2021_08_16_151054) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "users", column: "followed_id"
+  add_foreign_key "contacts", "users", column: "following_id"
   add_foreign_key "posts", "users"
+  add_foreign_key "user_tags", "tags"
+  add_foreign_key "user_tags", "users"
   add_foreign_key "users", "users", column: "invited_by_id"
 end
