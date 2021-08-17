@@ -5,4 +5,7 @@ class Post < ApplicationRecord
   has_many :post_upvoted
 
   enum category: [ :my_ideas, :ideas_from_others, :freestyle ]
+
+  include PgSearch::Model
+  multisearchable against: [:title]
 end
