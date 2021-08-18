@@ -48,6 +48,7 @@ body {
   &:focus,
   &:hover {
     outline: none;
+    text-decoration: none;
     .material-icons {
       font-family: Open Sans;
       color: #342ead;
@@ -58,6 +59,7 @@ body {
     }
   }
 }
+
 
 .material-icons {
   font-family: Open Sans;
