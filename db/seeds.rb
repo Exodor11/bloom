@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #USER SEEDS
-romain = User.new(email: 'romain@laguildedeouf.com', first_name: 'Romain', last_name: 'Losey', bio: 'Schlague', password: '12345678', password_confirmation: '12345678')
+romain = User.new(first_name: 'Romain', last_name: 'Losey', bio: 'Schlague', password: '12345678', password_confirmation: '12345678')
 romain.save!
-marc = User.new(email: 'marc@laguildedeouf.com', first_name: 'Marc', last_name: 'Leswag', bio: 'Bullish', password: '12345678', password_confirmation: '12345678')
+marc = User.new(first_name: 'Marc', last_name: 'Leswag', bio: 'Bullish', password: '12345678', password_confirmation: '12345678')
 marc.save!
 
 #POST SEEDS
