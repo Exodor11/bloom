@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
   has_many :post_saved
   has_many :post_upvoted
+  has_one_attached :photo
 
 
   enum category: [ :my_ideas, :ideas_from_others, :freestyle ]

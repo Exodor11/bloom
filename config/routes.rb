@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :contacts
     resources :user_tags
+    resources :contacts
   end
 
   resources :posts do
     resources :posts_saved
-    resources :posts_updated
+    resources :posts_upvoted
     resources :post_tags
   end
 end
