@@ -2,7 +2,16 @@
 <%= simple_form_for [ @post ] do |f| %>
   <%= f.input :title, placeholder: "Post Title" %>
   <%= f.input :text, placeholder: "Text" %>
-  <%= f.input :category, collection: Post.categories.keys %>
+  <%# <%= f.input :category, collection: Post.categories.keys %>
+  <%= f.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            label_method: ->(obj){ Post.category_label(obj) },
+            value_method: ->(obj){ obj[0] },
+            collection: Post.categories %>
   <%= f.association :tags,
                   as: :check_boxes,
                   input_html: { class: "tag-selector" },
