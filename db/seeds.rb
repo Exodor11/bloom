@@ -13,7 +13,7 @@ marc = User.new(email: 'marc@marc.com', first_name: 'Marc', last_name: 'Leswag',
 marc.save!
 
 #POST SEEDS
-post1 = Post.new(title: 'Vaincre le schlague', text: 'pas facile', category: "curated", user: romain)
+post1 = Post.new(title: 'Vaincre le schlague', text: 'pas facile', user: romain)
 post1.save!
-post2 = Post.new(title: "Comment gérer une équipe d'incompétents", text: 'vraiment pas facile', category: "curated", user: marc)
+post2 = Post.new(title: "Comment gérer une équipe d'incompétents", text: 'vraiment pas facile', user: marc)
 post2.save!
