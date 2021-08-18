@@ -35,9 +35,29 @@ class PostsController < ApplicationController
     #redirect
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    @user = current_user
+    @upvote = PostUpvoted.new(post_id: @post, user: @user)
+    @upvote.post = @post
+    @upvote.user = @user
+    @upvote.save!
+    # redirect_to profile_path
+  end
+
+  def save
+    @post = Post.find(params[:id])
+    @user = current_user
+    @saved = PostSaved.new(post_id: @post, user: @user)
+    @saved.post = @post
+    @saved.user = @user
+    @saved.save!
+    # redirect_to_profile_path
+  end
+
   private
 
   def post_params
-    #params.require(:post).permit(à remplir)
+    params.require(:post).permit(:title)
   end
 end
