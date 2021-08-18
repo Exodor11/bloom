@@ -1,12 +1,76 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+body {
+  font-family: Open Sans, sans-serif;
+  color: #303030;
+  background-color: mix(#fff, #342ead, 95%);
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.menu {
+  z-index: 1000;
+  display: flex;
+  flex-grow: 1;
+  height: 72px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(#342ead, 0.25), 0 15px 30px 0 rgba(#342ead, 0.1);
+  position: fixed;
+  bottom: 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    outline: none;
+    .material-icons {
+      font-family: Open Sans;
+      color: #342ead;
+    }
+
+    .menu-item-label {
+      color: #342ead;
+    }
+  }
+}
+
+.material-icons {
+  font-family: Open Sans;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 26px;
+  color: mix(#fff, #342ead, 60%);
+  transition: 0.25s ease;
+}
+
+.menu-item-label {
+  display: block;
+  font-size: 13px;
+  color: mix(#fff, #342ead, 70%);
+  transition: 0.25s ease;
 }
