@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :bio, :contact_text, :photo])
     
     # For additional fields in app/views/devise/invitations/edit.html.erb
-    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :bio, :contact_text, :photo])
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :bio, :contact_text, :photo, tag_ids: []])
   end
 
 end

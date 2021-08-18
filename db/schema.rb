@@ -47,11 +47,11 @@ ActiveRecord::Schema.define(version: 2021_08_17_150449) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.bigint "followed_id"
+    t.bigint "follower_id"
     t.bigint "following_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_id"], name: "index_contacts_on_followed_id"
+    t.index ["follower_id"], name: "index_contacts_on_follower_id"
     t.index ["following_id"], name: "index_contacts_on_following_id"
   end
 
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 2021_08_17_150449) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "contacts", "users", column: "followed_id"
+  add_foreign_key "contacts", "users", column: "follower_id"
   add_foreign_key "contacts", "users", column: "following_id"
   add_foreign_key "post_saveds", "posts"
   add_foreign_key "post_saveds", "users"

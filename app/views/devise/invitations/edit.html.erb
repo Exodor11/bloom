@@ -12,6 +12,10 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :bio %>
     <%= f.input :contact_text %>
+    <%= f.association :tags,
+                as: :check_boxes,
+                input_html: { class: "tag-selector" },
+                item_wrapper_class: 'tag-item' %>
   </div>
 
   <div class="form-actions">
