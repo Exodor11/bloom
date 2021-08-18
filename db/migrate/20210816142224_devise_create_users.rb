@@ -35,7 +35,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.text :bio
       t.text :contact_text
-      t.references :invited_by, index: true, foreign_key: {to_table: :users}
 
       t.timestamps null: false
     end
