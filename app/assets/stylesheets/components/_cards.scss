@@ -1,25 +1,5 @@
 $font: 'Open Sans', sans-serif;
 
-* {
-  box-sizing: border-box;
-}
-
-// body {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 0;
-//   background-color: #f7f8fc;
-//   font-family: "Roboto", sans-serif;
-//   color: #10182f;
-// }
-
-.container {
-  display: flex;
-  width: 1040px;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
 .card {
   margin: 10px;
   background-color: #fff;
@@ -103,12 +83,7 @@ $font: 'Open Sans', sans-serif;
   height: 40px;
   margin-right: 10px;
 }
-// .user-info h5 {
-//   margin: 0;
-// }
-// .user-info small {
-//   color: #545d7a;
-// }
+
 
 p {
   font-family: $font;
