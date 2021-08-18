@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#USER SEEDS
+romain = User.new(email: 'romain@laguildedeouf.com', first_name: 'Romain', last_name: 'Losey', bio: 'Schlague', password: '12345678', password_confirmation: '12345678')
+romain.save!
+marc = User.new(email: 'marc@laguildedeouf.com', first_name: 'Marc', last_name: 'Leswag', bio: 'Bullish', password: '12345678', password_confirmation: '12345678')
+marc.save!
+
+#POST SEEDS
+post1 = Post.new(title: 'Vaincre le schlague', text: 'pas facile', user: romain)
+post1.save!
+post2 = Post.new(title: "Comment gérer une équipe d'incompétents", text: 'vraiment pas facile', user: marc)
+post2.save!
