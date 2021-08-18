@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying previous stuff"
+User.destroy_all
+Post.destroy_all
+puts "Adding new stuff"
+
 #USER SEEDS
-romain = User.new(first_name: 'Romain', last_name: 'Losey', bio: 'Schlague', password: '12345678', password_confirmation: '12345678')
+romain = User.new(email: "romain@fuckthisshit.com", first_name: 'Romain', last_name: 'Losey', bio: 'Schlague', password: '12345678', password_confirmation: '12345678')
 romain.save!
-marc = User.new(first_name: 'Marc', last_name: 'Leswag', bio: 'Bullish', password: '12345678', password_confirmation: '12345678')
+marc = User.new(email: "marc@fuckthisshit.com", first_name: 'Marc', last_name: 'Leswag', bio: 'Bullish', password: '12345678', password_confirmation: '12345678')
 marc.save!
 
 #POST SEEDS
