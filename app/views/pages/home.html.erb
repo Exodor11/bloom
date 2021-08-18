@@ -1,14 +1,57 @@
+<div>
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<div class="container">
-<%= form_tag posts_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search here!"
-  %>
+<%= link_to "Write a story", "#", class: "btn btn-ghost" %>
 </div>
-<div>
-  <%= submit_tag "Search", class: "btn btn-flat" %>
-  <% end %>
+
+  <div class="card">
+    <div class="card-header">
+      <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+    </div>
+    <div class="tags">
+      <span class="tag tag-color-test<%=%>">Technology</span>
+      <span class="tag tag-pink<%=%>">Science</span>
+      <span class="tag tag-purple<%=%>">Finance</span>
+    </div>
+    <div class="card-body">
+    <h4 class="card-title">
+      Why is the Tesla Cybertruck designed the way it
+      is?
+    </h4>
+    <p>
+      An exploration into the truck's polarising design (description)
+    </p>
+    <div class="user">
+      <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+      <h5 style="font-size: 14px;">Marc L.</h5>
+      <div class="align-interactions">
+        <div class="align-upvote">
+          <i class="far fa-arrow-alt-circle-up"></i>
+        </div>
+        <div class="align-save">
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+  <nav class="menu">
+    <a href="" class="menu-item">
+      <span class="material-icons"><i class="fas fa-home" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Games</span>
+    </a>
+    <a href="#" class="menu-item">
+      <span class="material-icons"><i class="fas fa-home" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Images</span>
+    </a>
+    <a href="#" class="menu-item">
+      <span class="material-icons"><i class="fas fa-home" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Movies</span>
+    </a>
+    <a href="#" class="menu-item">
+      <span class="material-icons"><i class="fas fa-home" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Store</span>
+    </a>
+  </nav>
