@@ -1,24 +1,44 @@
-<h1>New posts will go here</h1>
-<%= simple_form_for [ @post ] do |f| %>
-  <%= f.input :title, placeholder: "Post Title" %>
-  <%= f.input :text, placeholder: "Text" %>
-  <%# <%= f.input :category, collection: Post.categories.keys %>
-  <%= f.input :category,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            label_method: ->(obj){ Post.category_label(obj) },
-            value_method: ->(obj){ obj[0] },
-            collection: Post.categories %>
-  <%= f.input :photo, as: :file %>
-  <%= f.association :tags,
-                  as: :check_boxes,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item' %>
-  <%= f.submit "Share this post with the world!", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
 
+  <h1>Drop an insight 🚀</h1>
 
+  <%= simple_form_for [ @post ] do |f| %>
+    <%= f.input :title, placeholder: "Post Title" %>
+    <%= f.input :text, placeholder: "Text" %>
+    <%# <%= f.input :category, collection: Post.categories.keys %>
+    <%= f.input :category,
+              as: :radio_buttons,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'},
+              label_method: ->(obj){ Post.category_label(obj) },
+              value_method: ->(obj){ obj[0] },
+              collection: Post.categories %>
+    <%= f.input :photo, as: :file %>
+    <%= f.association :tags,
+                    as: :check_boxes,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+    <%= f.submit "Share this post with the world!", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
+<nav class="menu">
+      <a href="<%= posts_path %>" class="menu-item">
+        <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+        <span class="menu-item-label">Daily insights</span>
+      </a>
+      <a href="<%= new_post_path %>" class="menu-item">
+        <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+        <span class="menu-item-label">Add post</span>
+      </a>
+      <a href="<%= search_path %>" class="menu-item">
+        <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+        <span class="menu-item-label">Search</span>
+      </a>
+      <a href="#" class="menu-item">
+        <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+        <span class="menu-item-label">Profile</span>
+      </a>
+</nav>

@@ -1,25 +1,14 @@
 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 <div>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Homepage(LOGIN FORM BEGINNING)</h1>
+<!-- <p>Find me in app/views/pages/home.html.erb</p>
+
 <%= link_to "Write a story", "#", class: "btn btn-ghost" %>
 </div>
 <div>
   <%= submit_tag "Search", class: "btn btn-flat" %>
 </div>
-
- <div class ="container">
-        <%= form_tag posts_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search posts"
-          %>
-    <div>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    </div>
-        <% end %>
-  </div>
+ -->
 
   <!-- card starts here -->
   <!-- <div class="card">
@@ -79,23 +68,3 @@
   <hr>
 </div>
 <!-- Profile ends here -->
-
-
- <nav class="menu">
-    <a href="" class="menu-item">
-      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
-      <span class="menu-item-label">Daily insights</span>
-    </a>
-    <a href="#" class="menu-item">
-      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
-      <span class="menu-item-label">Add post</span>
-    </a>
-    <a href="#" class="menu-item">
-      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
-      <span class="menu-item-label">Search</span>
-    </a>
-    <a href="#" class="menu-item">
-      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
-      <span class="menu-item-label">Profile</span>
-    </a>
-  </nav>
