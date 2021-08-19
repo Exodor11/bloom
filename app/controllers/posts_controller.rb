@@ -1,19 +1,14 @@
 class PostsController < ApplicationController
 
   def index
-    # if params[:query].present?
-    #   sql_query = " \
-    #     posts.title ILIKE :query \
-    #     OR tags.name ILIKE :query \
-    #     OR tags.category ILIKE :query \
-    #     OR users.first_name ILIKE :query \
-    #     OR users.last_name ILIKE :query \
-    #     "
-    #   @posts = Post.joins(:tag, :user).where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @posts = Post.all
-    # end
-    @posts = Post.all
+    if params[:query].present?
+      sql_query = " \
+        posts.title ILIKE :query \
+        "
+      @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -71,4 +66,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :category, tag_ids: [])
   end
+
+        # OR tags.name ILIKE :query \
+        # OR tags.category ILIKE :query \
+        # OR users.first_name ILIKE :query \
+        # OR users.last_name ILIKE :query \
 end
