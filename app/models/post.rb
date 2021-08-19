@@ -21,5 +21,16 @@ class Post < ApplicationRecord
   end
 
   # include PgSearch::Model
-  # multisearchable against: [:title]
+  #   multisearchable against: [:title]
+  #   #  against: [ :title ],
+  #   # using: {
+  #   #   tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   # }
+
+    include PgSearch::Model
+    pg_search_scope :search_by_title,
+    against: [ :title ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
