@@ -1,33 +1,26 @@
-$font: 'Open Sans', sans-serif;
-
+$font: 'Nunito', sans-serif;
 .card {
+  margin: 10px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
-  margin-bottom: 2vh;
-  margin-right: auto;
-  margin-left: auto;
 }
-
 .card-header img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .card-title {
   margin-top: 0px;
   font-weight: bold;
   font-size: 18px;
   font-family: $font;
 }
-
 .card-header {
   padding: 0px;
 }
-
 .card-body {
   display: flex;
   flex-direction: column;
@@ -35,10 +28,8 @@ $font: 'Open Sans', sans-serif;
   align-items: flex-start;
   padding: 20px;
 }
-
-
 .tag {
-  background: #cccccc;
+  background: #CCCCCC;
   border-radius: 50px;
   font-size: 10px;
   margin: 0;
@@ -48,15 +39,14 @@ $font: 'Open Sans', sans-serif;
   cursor: pointer;
 }
 .tag-color-test {
-  background-color: #47bcd4;
+  background-color: #47BCD4;
 }
 .tag-purple {
-  background-color: #5e76bf;
+  background-color: #5E76BF;
 }
 .tag-pink {
-  background-color: #cd5b9f;
+  background-color: #CD5B9F;
 }
-
 .card-body p {
   font-size: 13px;
   margin: 0 0 40px;
@@ -66,60 +56,38 @@ $font: 'Open Sans', sans-serif;
   display: flex;
   align-items: center;
 }
-
 .align-interactions {
   flex-direction: row;
   display:flex;
 }
-
 .align-upvote {
   padding-left: 75px;
 }
-
 .align-save {
   margin-left: 18px;
 }
-
-
 .user img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   margin-right: 10px;
 }
-
-
 p {
   font-family: $font;
 }
-
 h5 {
   font-family: $font;
 }
-
 .tags {
   display: inline-flex;
   flex-wrap: wrap;
 }
-
 .tags > span {
   margin: 5px;
 }
-
 .fa-arrow-alt-circle-up {
   font-size: 25px;
 }
-
 .fa-bookmark {
   font-size: 25px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: grey;
-  text-decoration: none;
 }
