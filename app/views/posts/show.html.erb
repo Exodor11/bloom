@@ -12,6 +12,26 @@
   <div style="margin: 0 10% 5% 10%; margin-bottom: 15px;" class="user">
     <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
     <h5 style="font-size: 14px;"><span><%=@post.user.first_name%> </span><span><%=@post.user.last_name%></span></h5>
+
+    <div class="show-interaction">
+    
+      <div class="align-interactions">
+              <% if @post.post_saved.find_by(user_id: current_user.id).present? %>
+                <div class="align-upvote">
+                  <a class="" data-method="delete" href="<%= post_unsave_path(@post) %>"><i class="fas fa-bookmark"></i></a>
+                </div>
+              <% else %>
+                 <div class="align-upvote">
+                  <a class="align-save" data-method="post" href="<%= post_save_path(@post) %>"><i class="far fa-bookmark"></i></a>
+                </div>
+              <% end %> 
+
+              <div class="align-upvote">
+                <i class="far fa-arrow-alt-circle-up"></i>
+              </div>
+        </div>
+    </div>
+
   </div>
 
   <div style="margin: 0 10% 15px 10%; font-style: italic;" class="description-post">

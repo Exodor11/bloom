@@ -11,7 +11,7 @@
   color: white;
   background-color:blue
 }
-button {
+.follow {
   color: #167FFB;
   border: 2px solid #167FFB;
   width:90px;
@@ -30,18 +30,18 @@ button {
   // font-weight: lighter;
   font-size: 13px;
 }
-button .msg-follow,
-button .msg-following,
-button .msg-unfollow{
+.follow .msg-follow,
+.follow .msg-following,
+.follow .msg-unfollow{
   display: none;
 }
-button .msg-follow{
+.follow .msg-follow{
   display: inline;
 }
-button.following .msg-follow{
+.follow.following .msg-follow{
   display: none;
 }
-button.following .msg-following{
+.follow.following .msg-following{
   display: inline;
 }
 .msg-follow {

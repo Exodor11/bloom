@@ -1,0 +1,33 @@
+<!-- profile starts here -->
+<div class="container">
+  <a href="" style="display: flex; justify-content: flex-end;"><i class="far fa-edit"></i></a>
+  
+  <div style="display: flex; justify-content: center;" class="profile-picture">
+    <img style="border-radius: 50%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+  </div>
+
+  <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
+
+  <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
+    <span><strong><%= @user.followers.count %></strong><small> followers</small></span><span><strong><%= @user.followings.count %></strong><small> following</small></span>
+  </div>
+
+  <div style="display: flex; justify-content: center; margin-top: 10px;"class="follow-centered">
+    <%# <button class="follow">
+      <span class="msg-follow">Follow</span>
+      <span class="msg-following">Following</span>
+      <span class="msg-unfollow">Unfollow</span>
+    </button> %>
+    <% if current_user.followings.find_by(id: @user.id).present? %>
+      <button class="following"><a class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
+    <% else %>
+      <a class="follow" data-method="post" href="<%= user_follow_path(@user) %>">follow</a>
+    <% end %> 
+  </div>
+  <hr>
+    <article style="font-size: 90%;"><%= @user.bio %></article>
+  <hr>
+    <article><%= @user.contact_text %></article>
+  <hr>
+</div>
+<!-- Profile ends here -->
