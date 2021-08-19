@@ -8,6 +8,19 @@
   <%= submit_tag "Search", class: "btn btn-flat" %>
 </div>
 
+ <div class ="container">
+        <%= form_tag posts_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search posts"
+          %>
+    <div>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    </div>
+        <% end %>
+  </div>
+
   <div class="card">
     <div class="card-header">
       <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
