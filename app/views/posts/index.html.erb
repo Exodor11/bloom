@@ -1,34 +1,39 @@
-<h1>This is the Post #index</h1>
-<h2>More stuff will go here later</h2>
-<p> 😎</p>
+<h1 style="text-align: center;">Daily Insights</h1>
 
-<div class="card">
+
+<div class="container">
   <% @posts.each do |post| %>
-    <div class="card-header">
-      <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
-    </div>
-    <div class="tags">
-      <span class="tag tag-color-test<%=%>">Technology</span>
-      <span class="tag tag-pink<%=%>">Science</span>
-      <span class="tag tag-purple<%=%>">Finance</span>
-    </div>
-    <div class="card-body">
-    <h4 class="card-title"><%= post.title %></h4>
-    <p>
-      An exploration into the truck's polarising design (description)
-    </p>
-    <div class="user">
-      <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
-      <h5 style="font-size: 14px;">Marc L.</h5>
-      <div class="align-interactions">
-        <div class="align-upvote">
-          <i class="far fa-arrow-alt-circle-up"></i>
+    <div class="card">
+        <div class="card-header">
+          <a href="<%= post_path(post.id)%>">
+            <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+          </a>
         </div>
-        <div class="align-save">
-          <i class="far fa-bookmark"></i>
+
+        <div class="tags">
+          <span class="tag tag-color-test<%=%>">Technology</span>
+          <span class="tag tag-pink<%=%>">Science</span>
+          <span class="tag tag-purple<%=%>">Finance</span>
         </div>
-      </div>
+
+        <div class="card-body">
+          <a href="<%= post_path(post.id)%>">
+            <h4 class="card-title"><%= post.title %></h4>
+          </a>
+          <p> <%= post.text %> </p>
+          <div class="user">
+            <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+            <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
+            <div class="align-interactions">
+              <div class="align-upvote">
+                <i class="far fa-arrow-alt-circle-up"></i>
+              </div>
+              <div class="align-save">
+                <i class="far fa-bookmark"></i>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
   <% end %>
 </div>
