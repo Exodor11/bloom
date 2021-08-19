@@ -19,7 +19,7 @@
 
 
 body {
-  font-family: Open Sans, sans-serif;
+  font-family: Nunito, sans-serif;
   color: #303030;
   background-color: mix(#fff, #342ead, 95%);
 }
@@ -50,7 +50,7 @@ body {
     outline: none;
     text-decoration: none;
     .material-icons {
-      font-family: Open Sans;
+      font-family: Nunito, sans-serif;
       color: #342ead;
     }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .material-icons {
-  font-family: Open Sans;
+  font-family: Nunito, sans-serif;
   display: block;
   margin-bottom: 4px;
   font-size: 26px;
@@ -75,3 +75,4 @@ body {
   color: mix(#fff, #342ead, 70%);
   transition: 0.25s ease;
 }
+
