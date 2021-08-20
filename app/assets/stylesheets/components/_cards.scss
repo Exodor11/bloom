@@ -5,13 +5,13 @@ $font: 'Nunito', sans-serif;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 300px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
 .card-header img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 .card-title {
