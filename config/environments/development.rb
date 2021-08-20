@@ -32,7 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -62,8 +62,21 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025, domain: '127.0.0.1' }
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain: 'gmail.com',
+    user_name: "unboarding.guilde@gmail.com",
+    password: "La_Guilde11",
+    authentication:       'plain',
+    enable_starttls_auto: true }
   
+  #{ address: '127.0.0.1', port: 1025, domain: '127.0.0.1' }
+  
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_token: "75d8fdea-f47a-4d2e-931e-a5305b9a4da5" }
+
+
 end
