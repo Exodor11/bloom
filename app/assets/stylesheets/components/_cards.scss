@@ -31,7 +31,7 @@ $font: 'Nunito', sans-serif;
   padding: 20px;
 }
 .tag {
-  background: #CCCCCC;
+  background: #91C4F2;
   border-radius: 50px;
   font-size: 10px;
   margin: 0;
@@ -40,15 +40,67 @@ $font: 'Nunito', sans-serif;
   text-transform: uppercase;
   cursor: pointer;
 }
-.tag-color-test {
-  background-color: #47BCD4;
+.tag-technology {
+  // border: 1px solid #47BCD4;
+  background-color: #007FFF;
+  color: white;
 }
-.tag-purple {
-  background-color: #5E76BF;
+.tag-finance {
+  // border: 1px solid green;
+  background-color: #00F5D4;
+  color: white;
 }
-.tag-pink {
-  background-color: #CD5B9F;
+.tag-entrepreneurship {
+  // border: 1px solid #CD5B9F;
+  background-color: #9B5DE5;
+  color: white;
 }
+
+.tag-Business {
+  // border: 1px solid lightblue;
+  background-color: #91C4F2;
+  color: white;
+}
+
+.tag-sciences {
+  // border: 1px solid yellow;
+  background-color: #FEE440;
+  color: white;
+
+}
+.tag-psychology {
+  // border: 1px solid violet;
+  background-color: #9B5DE5;
+  color: white;
+}
+
+.tag-politics {
+  // border: 1px solid violet;
+  background-color: #E67F0D;
+  color: white;
+
+}
+
+.tag-health {
+  // border: 1px solid violet;
+  background-color: red;
+  color: white;
+
+}
+
+.tag-philosophy {
+background-color: orange;
+color: white;
+
+}
+
+.tag-sociology {
+  background-color: #37d28b;
+  color: white;
+
+
+}
+
 .card-body p {
   font-size: 13px;
   margin: 0 0 40px;
@@ -93,3 +145,5 @@ h5 {
 .fa-bookmark {
   font-size: 25px;
 }
+
+
