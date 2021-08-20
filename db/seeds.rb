@@ -73,8 +73,11 @@ contact4 = Contact.create(follower: nathan, following: romain)
 
 #POST SEEDS
 post1 = Post.new(title: 'Vaincre le schlague', text: 'pas facile', user: romain)
+post1.photo.attach(io: URI.open('https://i.ytimg.com/vi/WjWldUTdUqc/maxresdefault.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
 post1.save!
+
 post2 = Post.new(title: "Comment gérer une équipe d'incompétents", text: 'vraiment pas facile', user: marc)
+post2.photo.attach(io: URI.open('https://d.newsweek.com/en/full/1871810/donald-trump-joe-biden-afghanistan-taliban.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
 post2.save!
 
 #POST TAGS SEEDS

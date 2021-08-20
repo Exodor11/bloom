@@ -6,32 +6,29 @@
     <div class="card">
         <div class="card-header">
           <a href="<%= post_path(post.id)%>">
-            <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+            <% if post.photo.attached? %>
+              <img src="<%= cl_image_path post.photo.key, height: 300, crop: :fill %>" alt="rover" />
+            <% end %>
           </a>
         </div>
 
         <div class="tags">
-          <span class="tag tag-color-test<%=%>">Technology</span>
-          <span class="tag tag-pink<%=%>">Science</span>
-          <span class="tag tag-purple<%=%>">Finance</span>
+          <% post.tags.each do |tag| %>
+            <span class="tag tag-color-test"><%= tag.name %></span>
+          <% end %>
         </div>
 
         <div class="card-body">
           <a href="<%= post_path(post.id)%>">
             <h4 class="card-title"><%= post.title %></h4>
           </a>
-          <p> <%= post.text %> </p>
+          <p><%= post.text %> </p>
           <div class="user">
-            <img src="https://yt3.ggpht.com/a/AGF-l7-0J1G0Ue0mcZMw-99kMeVuBmRxiPjyvIYONg=s900-c-k-c0xffffffff-no-rj-mo" alt="user" />
+            <% if post.user.photo.attached? %>
+              <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
+            <% end %>
             <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
-            <div class="align-interactions">
-              <div class="align-upvote">
-                <i class="far fa-arrow-alt-circle-up"></i>
-              </div>
-              <div class="align-save">
-                <i class="far fa-bookmark"></i>
-              </div>
-            </div>
+
           </div>
         </div>
     </div>
