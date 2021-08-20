@@ -9,6 +9,8 @@
 puts "Destroying previous stuff"
 PostTag.destroy_all
 UserTag.destroy_all
+PostSaved.destroy_all
+PostUpvoted.destroy_all
 Contact.destroy_all
 Post.destroy_all
 Tag.destroy_all
@@ -72,7 +74,40 @@ contact3 = Contact.create(follower: romain, following: nathan)
 contact4 = Contact.create(follower: nathan, following: romain)
 
 #POST SEEDS
-post1 = Post.new(title: 'Vaincre le schlague', text: 'pas facile', user: romain)
+post1 = Post.new(title: 'How to Identify a Pseudo-Smart Person', 
+                description: "Just sharing some wisdom on the controversial topic of smartness",
+                text: 'Over my career as a copywriter, I’ve interviewed dozens of top performers. I’ve been privileged to have genuine, deep 1-on-1 conversations with heads of multi-million dollar businesses. These are aggressively smart people, who make me feel humbled just by their presence.
+                It’s comical how different these people are from my peers. Many of my acquaintances feel extremely smart. They have zero achievements to back up their ego. Even when every piece of evidence shows that they’re not so smart, they find a smart reason why the world is wrong and they’re right.
+                That’s not how top performers think. Here are four things I noticed truly smart people never do.
+                Want to read this story later? Save it in Heyday.
+                1. They don’t overthink
+                Instead, they test things with brutal immediacy.
+                Ironically, a hallmark trait of highly intelligent people is humility. Intelligence is a by-product of experience and knowledge, and smart people are painfully aware of the things they don’t know or can’t do.
+                When you think about it, overthinking is just a state of inflated ego. You think that you can ‘think up’ an answer to your problem. You think that you’re smart enough to solve a problem just in your head.
+                That’s not what smart people do. Smart people embrace what the author of The Black Swan calls the anti-library: a set of all the things we don’t know. Smart people know that the answers to their problems cannot be found in their head.
+                Instead, they take immediate action. They’ll sign contracts on an impulse and cut them off just as brutally. If they find something interesting, they’ll turn 140% of their energy to that thing alone, and then leave it as soon as they realize it didn’t work.
+                Here’s how to identify a pseudo-smart person: ask them what they’ve actually done in order to achieve their goals. If they start justifying their inaction, you’re dealing with a pseudo-intellectual.
+                2. They don’t do small talk
+                Instead, they lead with borderline honesty and directness.
+                Another thing that stands out with aggressively smart people is their directness and honesty.
+                Truly intelligent people value their time, and they value yours. That’s why you’ll seldom hear a smart person chit-chatting about their vacation for 30 minutes. They just don’t see the point.
+                I think it’s a sort of a filter. It’s not that smart people don’t enjoy being nice — or that they don’t know how to be pleasant.
+                I think they do it to gauge your reaction. If you appreciate them being direct, they know they’re dealing with another smart person. If you get confused and insulted by their directness — they’ll instantly know you’re probably just trying to look smart.
+                3. They don’t need a sophisticated reason to act
+                Instead, they often act on an impulse.
+                Intelligent people will sometimes act childishly, but do not mistake their free-willed behavior with aimlessness.
+                Many of the people I’ve interviewed explain their actions via seemingly arbitrary reasons. They’ll say things “because I like it” or “it just feels good,” which can make you think that they don’t know what they’re doing.
+                First of all, truly intelligent people always know what they’re doing. So if they don’t go into a 30-minute lecture explaining to you why they did this or that, it’s probably because they don’t see the point — or don’t have the time.
+                But then, intelligence is more than just about intellect. Intelligence is about trusting your emotions, too. Smart people learn how to trust their inner signals in combination with external information.
+                Pseudo-smart people, on the other hand, will usually have a super-smart reason why they’re doing whatever it is what they’re doing. They’ll talk about markets, industries, news, latest research. They’ll try to convince you that the entire world is behind them on their decision. And then they’ll sit on their butts for 2 months.
+                4. They don’t hijack conversations
+                Instead, they listen more than they talk.
+                Another hallmark of highly intelligent people is that they’re rarely the centerpiece of the conversation. You’ll rarely hear them dominate over someone— unless they have a reason to.
+                Partly it’s because truly smart people realize how futile most conversations are. After years of trial and error, they come to find a truth that their words rarely lead to any tangible result. Instead, they focus on actions.
+                Another reason is that they’re good listeners. Aggressively smart people are smart for a reason — they’ve had lots and lots of other aggressively smart people tell them things about life and business. To do that, they’ve learned to be good listeners.
+                It’s also an ego thing. If you know you can beat someone in a discussion, why not just let them talk? What’s the point of proving what you already know and spend tons of energy in the process?
+                Whenever you hear someone dominate a conversation — beware, you’re most likely dealing with a pseudo-intellectual.', 
+                user: romain)
 post1.photo.attach(io: URI.open('https://i.ytimg.com/vi/WjWldUTdUqc/maxresdefault.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
 post1.save!
 
