@@ -19,8 +19,8 @@
         </div>
 
         <div class="card-body">
-          <a href="<%= post_path(post.id)%>">
-            <h4 class="card-title"><%= post.title %></h4>
+          <a style="text-decoration: none;" href="<%= post_path(post.id)%>">
+            <h4 style="color: black;"class="card-title"><%= post.title %></h4>
           </a>
           <p><%= post.description %> </p>
           <div class="user">
@@ -52,7 +52,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
