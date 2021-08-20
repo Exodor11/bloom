@@ -4,7 +4,8 @@
 
   <%= simple_form_for [ @post ] do |f| %>
     <%= f.input :title, placeholder: "Post Title" %>
-    <%= f.input :text, placeholder: "Text" %>
+    <%= f.input :description, placeholder: "A short description" %>
+    <%= f.input :text, placeholder: "Your best reflections" %>
     <%# <%= f.input :category, collection: Post.categories.keys %>
     <%= f.input :category,
               as: :radio_buttons,
@@ -29,20 +30,28 @@
 <br>
 
 <nav class="menu">
-      <a href="<%= posts_path %>" class="menu-item">
-        <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
-        <span class="menu-item-label">Daily insights</span>
-      </a>
-      <a href="<%= new_post_path %>" class="menu-item">
-        <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
-        <span class="menu-item-label">Add post</span>
-      </a>
-      <a href="<%= search_path %>" class="menu-item">
-        <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
-        <span class="menu-item-label">Search</span>
-      </a>
-      <a href="#" class="menu-item">
-        <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
-        <span class="menu-item-label">Profile</span>
-      </a>
+    <a href="<%= posts_path %>" class="menu-item">
+      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Daily insights</span>
+    </a>
+    <a href="<%= new_post_path %>" class="menu-item">
+      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Add post</span>
+    </a>
+    <a href="<%= search_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Search</span>
+    </a>
+    
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Profile</span>
+    </a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
 </nav>

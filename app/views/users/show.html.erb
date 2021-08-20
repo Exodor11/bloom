@@ -4,6 +4,12 @@
     <a href="<%= edit_user_registration_path(@user) %>" style="display: flex; justify-content: flex-end;"><i class="far fa-edit"></i></a>
   <% end %>
   
+  <% if user_signed_in? %>
+      <a class="btn-ghost" data-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
+  <% else %>
+      <a class="btn-ghost" href="<%= new_user_session_path %>">Log in</a>
+  <% end %>
+  
   <div style="display: flex; justify-content: center;" class="profile-picture">
     <img style="border-radius: 50%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
   </div>
@@ -37,3 +43,29 @@
   <hr>
 </div>
 <!-- Profile ends here -->
+<nav class="menu">
+    <a href="<%= posts_path %>" class="menu-item">
+      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Daily insights</span>
+    </a>
+    <a href="<%= new_post_path %>" class="menu-item">
+      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Add post</span>
+    </a>
+    <a href="<%= search_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Search</span>
+    </a>
+    
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Profile</span>
+    </a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
+</nav>
