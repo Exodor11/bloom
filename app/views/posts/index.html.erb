@@ -7,7 +7,7 @@
         <div class="card-header">
           <a href="<%= post_path(post.id)%>">
             <% if post.photo.attached? %>
-              <img src="<%= cl_image_path post.photo.key, height: 300, crop: :fill %>" alt="rover" />
+              <img style ="object-fit: contain" src="<%= cl_image_path post.photo.key %>" alt="rover" />
             <% end %>
           </a>
         </div>
