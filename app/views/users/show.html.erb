@@ -1,6 +1,8 @@
 <!-- profile starts here -->
 <div class="container">
-  <a href="" style="display: flex; justify-content: flex-end;"><i class="far fa-edit"></i></a>
+  <% if current_user == @user %>
+    <a href="<%= edit_user_registration_path(@user) %>" style="display: flex; justify-content: flex-end;"><i class="far fa-edit"></i></a>
+  <% end %>
   
   <div style="display: flex; justify-content: center;" class="profile-picture">
     <img style="border-radius: 50%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
@@ -18,11 +20,15 @@
       <span class="msg-following">Following</span>
       <span class="msg-unfollow">Unfollow</span>
     </button> %>
-    <% if current_user.followings.find_by(id: @user.id).present? %>
-      <button class="following"><a class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
-    <% else %>
-      <a class="follow" data-method="post" href="<%= user_follow_path(@user) %>">follow</a>
-    <% end %> 
+
+    <% if current_user != @user %>
+      <% if current_user.followings.find_by(id: @user.id).present? %>
+        <button class="following"><a class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
+      <% else %>
+        <a class="follow" data-method="post" href="<%= user_follow_path(@user) %>">follow</a>
+      <% end %> 
+    <% end %>
+
   </div>
   <hr>
     <article style="font-size: 90%;"><%= @user.bio %></article>
