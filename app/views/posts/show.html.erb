@@ -1,8 +1,7 @@
 <div>
   <div class="title-post">
-    <h1 style="margin: 0 10% 0 10%; font-size: 195%; font-weight: bold; margin-top: 15px;"><%=@post.title%></h1>
+    <h1 style="margin: 2% 10% 3% 10%; font-size: 25px; font-weight: bold; margin-top: 15px;"><%=@post.title%></h1>
   </div>
-  <hr>
 
   <div class="post-image">
     <% if @post.photo.attached? %>
@@ -10,48 +9,50 @@
     <% end %>
   </div>
 
-<hr>
-  <div style="margin: 0 10% 5% 10%; margin-bottom: 15px;" class="user">
+  <div style="margin: 5% 5% 5% 5%; margin-bottom: 15px;" class="user">
     <% if @post.user.photo.attached? %>
       <a href="<%= user_path(@post.user)%>">
         <img src="<%= cl_image_path @post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
       </a>
     <% end %>
-    
+
     <h5 style="font-size: 14px;"><span><%=@post.user.first_name%> </span><span><%=@post.user.last_name%></span></h5>
 
     <div class="show-interaction">
-    
+
       <div class="align-interactions">
 
         <% if current_user == @post.user %>
 
-          <div class="align-save">
+        <div style="padding-left: 3px; display: flex;" class="align-upvote">
+          <div style="font-size: 20px;">
             <a href="<%= edit_post_path(@post) %>"><i class="far fa-edit"></i></a>
-            <div class="align-upvote">
-              <a class="" href="<%= %>"><%= @post.post_upvoted.count %><i class="fas fa-arrow-alt-circle-up"></i></a>
-            </div>
           </div>
-  
+          <div>
+            <a style="padding-left: 45px;" href="<%= %>"><i class="fas fa-arrow-alt-circle-up"></i></a>
+            <small><%= @post.post_upvoted.count%></small>
+          </div>
+        </div>
+
         <% else %>
 
           <% if @post.post_saved.find_by(user_id: current_user.id).present? %>
-            <div class="align-save">
+            <div style="padding-left:137px;">
               <a class="" data-method="delete" href="<%= post_unsave_path(@post) %>"><i class="fas fa-bookmark"></i></a>
             </div>
           <% else %>
-              <div class="align-save">
-              <a class="align-save" data-method="post" href="<%= post_save_path(@post) %>"><i class="far fa-bookmark"></i></a>
+              <div style="padding-left:137px;">
+              <a class="" data-method="post" href="<%= post_save_path(@post) %>"><i class="far fa-bookmark"></i></a>
             </div>
           <% end %>
 
           <% if @post.post_upvoted.find_by(user_id: current_user.id).present? %>
-            <div class="align-upvote">
+            <div style="padding-left:15px;">
               <a class="" data-method="delete" href="<%= post_unvote_path(@post) %>"><i class="fas fa-arrow-alt-circle-up"></i></a>
             </div>
           <% else %>
-              <div class="align-upvote">
-              <a class="align-save" data-method="post" href="<%= post_upvote_path(@post) %>"><i class="far fa-arrow-alt-circle-up"></i></a>
+              <div style="padding-left:15px;">
+              <a class="" data-method="post" href="<%= post_upvote_path(@post) %>"><i class="far fa-arrow-alt-circle-up"></i></a>
             </div>
           <% end %>
 
@@ -60,26 +61,25 @@
       </div>
 
   </div>
+</div>
 
-  <div style="margin: 0 10% 15px 10%; font-style: italic;" class="description-post">
+  <div style="margin: 0 5% 15px 5%; font-style: italic;" class="description-post">
     <small></small>
   </div>
 
   <div class="text-post">
-    <article><p style="margin: 0 10% 0 10%; font-size: 90%;"><%= @post.text %></p></article>
+    <article style="margin: 0 5% 0 5%; font-size: 90%;"><%= @post.text %></article>
   </div>
 
-  <div class="tags">
+  <div style="margin: 2% 5% 0 5%">
     <% @post.tags.each do |tag| %>
-      <div style="margin: 0 10% 0 10%; margin-top: 15px;" class="tags-post">
         <span class="tag tag-color-test"><%= tag.name %></span>
-      </div>
     <% end %>
 </div>
-
-
-</div>
-
+<br>
+<br>
+<br>
+<br>
 <nav class="menu">
     <a href="<%= posts_path %>" class="menu-item">
       <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
