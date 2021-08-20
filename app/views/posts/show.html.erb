@@ -28,6 +28,9 @@
 
           <div class="align-save">
             <a href="<%= edit_post_path(@post) %>"><i class="far fa-edit"></i></a>
+            <div class="align-upvote">
+              <a class="" href="<%= %>"><%= @post.post_upvoted.count %><i class="fas fa-arrow-alt-circle-up"></i></a>
+            </div>
           </div>
   
         <% else %>
@@ -74,9 +77,6 @@
     <% end %>
 </div>
 
-  <div style="margin: 0 10% 0 10%; margin-top: 15px;" class="tags-post">
-    <p></p>
-  </div>
 
 </div>
 
