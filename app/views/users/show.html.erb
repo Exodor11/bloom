@@ -3,13 +3,13 @@
   <% if current_user == @user %>
     <a href="<%= edit_user_registration_path(@user) %>" style="display: flex; justify-content: flex-end;"><i class="far fa-edit"></i></a>
   <% end %>
-  
+  <div style="margin-top: 2%">
   <% if user_signed_in? %>
-      <a class="btn-ghost" data-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
+      <a style="font-size: 14px;"class="btn-ghost" data-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
   <% else %>
-      <a class="btn-ghost" href="<%= new_user_session_path %>">Log in</a>
+      <a style="font-size: 14px;" class="btn-ghost" href="<%= new_user_session_path %>">Log in</a>
   <% end %>
-  
+  </div>
   <div style="display: flex; justify-content: center;" class="profile-picture">
     <img style="border-radius: 50%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
   </div>
@@ -29,10 +29,10 @@
 
     <% if current_user != @user %>
       <% if current_user.followings.find_by(id: @user.id).present? %>
-        <button class="following"><a class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
+        <button class="following"><a style="text-decoration: none;" class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
       <% else %>
-        <a class="follow" data-method="post" href="<%= user_follow_path(@user) %>">follow</a>
-      <% end %> 
+        <button class="follow"><a style="text-decoration: none;" data-method="post" href="<%= user_follow_path(@user) %>">follow</a></button>
+      <% end %>
     <% end %>
 
   </div>
@@ -56,7 +56,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
