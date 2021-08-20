@@ -1,7 +1,7 @@
 .btn-ghost {
-  color: blue;
-  border: 2px solid blue;
-  padding: 8px 24px;
+  color: grey;
+  // border: 1px solid grey;;
+  padding: 5px 10px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
@@ -9,8 +9,9 @@
 .btn-ghost:hover {
   opacity: 1;
   color: white;
-  background-color:blue
+  background-color:grey;
 }
+
 .follow {
   color: #167FFB;
   border: 2px solid #167FFB;
@@ -20,6 +21,8 @@
   // font-weight: lighter;
   font-size: 13px;
 }
+
+
 .following {
   background-color: #167FFB;
   color: white;

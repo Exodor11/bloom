@@ -51,11 +51,11 @@ body {
     text-decoration: none;
     .material-icons {
       font-family: Open Sans;
-      color: #342ead;
+      color: blue;
     }
 
     .menu-item-label {
-      color: #342ead;
+      color: blue;
     }
   }
 }
@@ -65,13 +65,13 @@ body {
   display: block;
   margin-bottom: 4px;
   font-size: 26px;
-  color: mix(#fff, #342ead, 60%);
+  color: mix(#fff, blue, 60%);
   transition: 0.25s ease;
 }
 
 .menu-item-label {
   display: block;
   font-size: 13px;
-  color: mix(#fff, #342ead, 70%);
+  color: mix(#fff, blue, 70%);
   transition: 0.25s ease;
 }
