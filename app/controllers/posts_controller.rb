@@ -42,23 +42,35 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @user = current_user
-    @upvote = PostUpvoted.new(post_id: @post, user: @user)
-    @upvote.post = @post
-    @upvote.user = @user
+    @upvote = PostUpvoted.new(post: @post, user: @user)
+    # @upvote.post = @post
+    # @upvote.user = @user
     @upvote.save!
-    # redirect_to profile_path
+    redirect_to @post
+  end
+
+  def unvote
+    @post = Post.find(params[:post_id])
+    @post.post_upvoted.where(user: current_user).destroy_all
+    redirect_to @post
   end
 
   def save
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
     @user = current_user
-    @saved = PostSaved.new(post_id: @post, user: @user)
+    @saved = PostSaved.new(post_id: params[:post_id], user: @user)
     @saved.post = @post
     @saved.user = @user
     @saved.save!
-    # redirect_to_profile_path
+    redirect_to @post
+  end
+
+  def unsave
+    @post = Post.find(params[:post_id])
+    @post.post_saved.where(user: current_user).destroy_all
+    redirect_to @post
   end
 
   private
