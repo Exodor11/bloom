@@ -21,7 +21,7 @@
 body {
   font-family: Open Sans, sans-serif;
   color: #303030;
-  background-color: mix(#fff, #342ead, 95%);
+  background-color: mix(#fff, rgba(#342ead, 0.1), 95%);
 }
 
 .menu {
@@ -33,7 +33,7 @@ body {
   border-radius: 12px;
   overflow-x: hidden;
   background-color: #fff;
-  box-shadow: 0 0 1px 0 rgba(#342ead, 0.25), 0 15px 30px 0 rgba(#342ead, 0.1);
+  box-shadow: 0 0 1px 0 rgba(#342ead, 0.1), 0 15px 30px 0 rgba(#342ead, 0.1);
   position: fixed;
   bottom: 0;
 }
