@@ -1,16 +1,17 @@
-<div class ="container mt-3">
-        <%= form_tag posts_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search posts"
-          %>
-    <div>
-      <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+<div class="container mt-4">
+  <div class="new-searchbar" >
+    <%= form_tag posts_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control new-searchbar",
+        style: "height: 43px",
+        placeholder: "Search insights by title, tag or author"%>
+  </div>
+    <div style="text-align:center">
+      <%= submit_tag "🚀", class: "btn btn-ghost mt-3" %>
     </div>
-        <% end %>
- </div>
-
+    <% end %>
+</div>
 <nav class="menu">
     <a href="<%= posts_path %>" class="menu-item">
       <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
