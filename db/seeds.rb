@@ -108,7 +108,7 @@ post1 = Post.new(title: 'How to Identify a Pseudo-Smart Person',
                 It’s also an ego thing. If you know you can beat someone in a discussion, why not just let them talk? What’s the point of proving what you already know and spend tons of energy in the process?
                 Whenever you hear someone dominate a conversation — beware, you’re most likely dealing with a pseudo-intellectual.', 
                 user: romain)
-post1.photo.attach(io: URI.open('https://i.ytimg.com/vi/WjWldUTdUqc/maxresdefault.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
+post1.photo.attach(io: URI.open('https://img.huffingtonpost.com/asset/61157a0c26000028b1537d15.jpg?cache=WqWJFQO51U&ops=scalefit_630_noupscale'), filename: 'post.jpg', content_type: 'image/jpg')
 post1.save!
 
 post2 = Post.new(title: "Comment gérer une équipe d'incompétents", text: 'vraiment pas facile', user: marc)
