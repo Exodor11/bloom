@@ -77,7 +77,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :category, :photo, tag_ids: [])
+    params.require(:post).permit(:title, :text, :description, :category, :photo, tag_ids: [])
   end
 
         # OR tags.name ILIKE :query \

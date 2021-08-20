@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_08_17_150449) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.text "description"
     t.text "text"
     t.bigint "category"
     t.bigint "user_id", null: false

@@ -62,7 +62,7 @@
   </div>
 
   <div style="margin: 0 10% 15px 10%; font-style: italic;" class="description-post">
-    <small></small>
+    <small><%= @post.description %></small>
   </div>
 
   <div class="text-post">
@@ -93,8 +93,16 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    <a href="#" class="menu-item">
+    
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Profile</span>
     </a>
-  </nav>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
+</nav>
