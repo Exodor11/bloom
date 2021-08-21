@@ -18,7 +18,12 @@
   <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
 
   <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
-    <span><strong><%= @user.followers.count %></strong><small> followers</small></span><span><strong><%= @user.followings.count %></strong><small> following</small></span>
+    <a href="<%= user_followers_path(@user.id) %>">
+      <span><strong><%= @user.followers.count %></strong><small> followers</small></span>
+    </a>
+    <a href="<%= user_followers_path(@user.id) %>">
+      <span><strong><%= @user.followings.count %></strong><small> followings</small></span>
+    </a>
   </div>
 
   <div style="display: flex; justify-content: center; margin-top: 10px;"class="follow-centered">

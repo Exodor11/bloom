@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
     post "follow", to: "users#follow"
     delete "unfollow", to: "users#unfollow"
+
+    get "followers", to: "users#followers"
+    get "followings", to: "users#followings"
   end
 
   resources :posts do
