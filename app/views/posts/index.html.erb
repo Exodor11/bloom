@@ -23,13 +23,17 @@
             <h4 style="color: black;"class="card-title"><%= post.title %></h4>
           </a>
           <p><%= post.description %> </p>
+          
           <div class="user">
-            <% if post.user.photo.attached? %>
-              <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
-            <% end %>
+            <a href="<%= user_path(current_user) %>">
+              <% if post.user.photo.attached? %>
+                <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
+              <% end %>
+            </a>
             <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
-
+            
           </div>
+          
         </div>
     </div>
   <% end %>

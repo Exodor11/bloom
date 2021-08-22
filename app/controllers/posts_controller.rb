@@ -91,6 +91,18 @@ class PostsController < ApplicationController
     # @posts = Post.post_saved.where(user: @user)
   end
 
+  def dailyinsights
+    @user = current_user
+    @user_tags = @user.tags
+    @all_posts = Post.all
+    @my_mix = []
+
+    @all_posts.each do |post|
+      @my_mix << post if post.tags.where(name: @user)
+    end
+    return @saved_posts
+  end
+
 
 
   private
