@@ -25,7 +25,7 @@
           <p><%= post.description %> </p>
           
           <div class="user">
-            <a href="<%= user_path(current_user) %>">
+            <a href="<%= user_path(post.user) %>">
               <% if post.user.photo.attached? %>
                 <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
               <% end %>
