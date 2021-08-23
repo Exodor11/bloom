@@ -15,9 +15,12 @@ Rails.application.routes.draw do
     get "followers", to: "users#followers"
     get "followings", to: "users#followings"
 
-    get "savedposts", to: "posts#savedposts"
+    get "savedposts", to: "users#savedposts"
 
-    get "ownposts", to: "posts#ownposts"
+    get "ownposts", to: "users#ownposts"
+
+    get "editstatus", to: "users#editstatus"
+    put "updatestatus", to: "users#updatestatus"
 
   end
 
@@ -31,6 +34,8 @@ Rails.application.routes.draw do
 
     post "upvote", to: "posts#upvote"
     delete "unvote", to: "posts#unvote"
+
+    get "upvotes", to: "posts#upvotes"
   end
 
   get "dailyinsights", to: "posts#dailyinsights"

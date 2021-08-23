@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def follow
@@ -41,4 +42,39 @@ class UsersController < ApplicationController
   end
 
 
+  def ownposts
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
+  end
+
+  def savedposts
+    @user = User.find(params[:user_id])
+    @saved_posts = @user.saved_posts
+    # @all_posts = Post.all
+    # @saved_posts = []
+
+    # @all_posts.each do |post|
+    #   @saved_posts << post if post.post_saved.where(user: @user).present?
+    # end
+    return @saved_posts
+    # @posts = Post.post_saved.where(user: @user)
+  end
+
+  def editstatus
+    @user = current_user
+  end
+
+  def updatestatus
+    @user = current_user
+    @user.update(user_params)
+    @user.save!
+    redirect_to @user
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:bio_action_text, :contact_action_text, :status_action_text, :user_id )
+  end
 end

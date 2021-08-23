@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
   has_many :post_saved
   has_many :post_upvoted
+  has_many :users, through: :post_upvoted
+  
   has_one_attached :photo
 
 

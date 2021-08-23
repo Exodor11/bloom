@@ -64,6 +64,18 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
+  def upvotes
+    @post = Post.find(params[:post_id])
+    @user = current_user
+    @upvoters = @post.users
+    # @upvoters = []
+
+    # @upvotes.each do |upvote|
+    #   @upvoters << User.find_by(id: upvote.user_id)
+    # end
+    # return @upvoters
+  end
+
   def unvote
     @post = Post.find(params[:post_id])
     @post.post_upvoted.where(user: current_user).destroy_all
@@ -86,33 +98,19 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
-  def ownposts
-    @user = User.find(params[:user_id])
-    @posts = Post.where(user: @user)
-  end
-
-  def savedposts
-    @user = User.find(params[:user_id])
-    @all_posts = Post.all
-    @saved_posts = []
-
-    @all_posts.each do |post|
-      @saved_posts << post if post.post_saved.where(user: @user).present?
-    end
-    return @saved_posts
-    # @posts = Post.post_saved.where(user: @user)
-  end
-
   def dailyinsights
     @user = current_user
-    @user_tags = @user.tags
+    @user_tags = @user.tags.map { |tag| tag.name }
+
     @all_posts = Post.all
     @my_mix = []
 
     @all_posts.each do |post|
-      @my_mix << post if post.tags.where(name: @user)
+      post.tags.each do |tag|
+        @my_mix << post if @user_tags.include?(tag.name) && !@my_mix.include?(post)
+      end
     end
-    return @saved_posts
+    return @my_mix
   end
 
 
