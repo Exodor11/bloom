@@ -28,6 +28,9 @@
           <div style="font-size: 20px;">
             <a href="<%= edit_post_path(@post) %>"><i class="far fa-edit"></i></a>
           </div>
+          <div style="font-size: 20px;">
+            <%= link_to "Delete Post", post_path(@post.id), method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
           <div>
             <a style="padding-left: 45px;" href="<%= %>"><i class="fas fa-arrow-alt-circle-up"></i></a>
             <small><%= @post.post_upvoted.count%></small>

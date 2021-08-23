@@ -23,11 +23,22 @@ class UsersController < ApplicationController
     current_user.following_contacts.where(following: @user).destroy_all
     redirect_to @user
     
-    
     # @following = current_user
     # @follower = User.find(params[:user_id])
     # Contact.destroy.where()
     # @contact = Contact.create(following: @following, follower: @follower)
     # redirect_to @follower
   end
+
+  def followers
+    @user = User.find(params[:user_id])
+    @followers = @user.followers
+  end
+
+  def followings
+    @user = User.find(params[:user_id])
+    @followings = @user.followings
+  end
+
+
 end

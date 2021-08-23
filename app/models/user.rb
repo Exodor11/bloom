@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :followings, through: :following_contacts
 
   has_one_attached :photo
+  has_rich_text :contact_action_text
 
   # include PgSearch::Model
   # pg_search_scope :search_by_first_name_and_last_name,

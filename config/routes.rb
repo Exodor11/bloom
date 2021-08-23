@@ -11,6 +11,14 @@ Rails.application.routes.draw do
 
     post "follow", to: "users#follow"
     delete "unfollow", to: "users#unfollow"
+
+    get "followers", to: "users#followers"
+    get "followings", to: "users#followings"
+
+    get "savedposts", to: "posts#savedposts"
+
+    get "ownposts", to: "posts#ownposts"
+
   end
 
   resources :posts do
@@ -24,4 +32,7 @@ Rails.application.routes.draw do
     post "upvote", to: "posts#upvote"
     delete "unvote", to: "posts#unvote"
   end
+
+  get "dailyinsights", to: "posts#dailyinsights"
+
 end

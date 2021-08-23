@@ -1,8 +1,8 @@
-<h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1>
+<h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s Saved Posts</h1>
 
 
-<!-- <div class="container"> -->
-  <% @posts.each do |post| %>
+<div class="container">
+  <% @saved_posts.each do |post| %>
     <div class="card">
         <div class="card-header">
           <a href="<%= post_path(post.id)%>">
@@ -23,21 +23,17 @@
             <h4 style="color: black;"class="card-title"><%= post.title %></h4>
           </a>
           <p><%= post.description %> </p>
-          
           <div class="user">
-            <a href="<%= user_path(post.user) %>">
-              <% if post.user.photo.attached? %>
-                <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
-              <% end %>
-            </a>
+            <% if post.user.photo.attached? %>
+              <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
+            <% end %>
             <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
-            
+
           </div>
-          
         </div>
     </div>
   <% end %>
-<!-- </div> -->
+</div>
 
 <br>
 <br>
