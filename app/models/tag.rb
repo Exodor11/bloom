@@ -3,5 +3,5 @@ class Tag < ApplicationRecord
   enum category: [ :business, :technology, :finance, :entrepreneurship, :sciences, :psychology, :politics, :health, :philosophy, :sociology ]
 
   # include PgSearch::Model
-  # multisearchable against: [:name, :category]
+  # multisearchable against: [:category]
 end

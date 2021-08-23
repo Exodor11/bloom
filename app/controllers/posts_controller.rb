@@ -4,12 +4,24 @@ class PostsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         posts.title ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR tags.name ILIKE :query \
         "
-      @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
+      @posts = Post.joins(:user).joins(:post_tags).where("posts.id = post_tags.post_id").joins(:tags).where("tags.id = post_tags.tag_id").where(sql_query, query: "%#{params[:query]}%").distinct
+      # @posts = Post.joins(:post_tags).where("posts.id = post_tags.post_id")
+      # @posts = Post.joins(:tags).where("tags.id = post_tags.tag_id AND tags.name='#{params[:query]}'")
+      # @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
+      # @post = PostTag.joins(:post).where(sql_query, query: "%#{params[:query]}%")
+      # @post_tags = PostTag.joins(:tag).where(sql_query, query: "%#{params[:query]}%")
+
+      # @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
     else
       @posts = Post.all
     end
   end
+
+  # Post.joins("JOIN post_tags ON posts.id = post_tags.post_id JOIN tags ON tags.id = post_tags.tag_id AND tags.name='entrepreneurship'")
+
 
   def show
     @post = Post.find(params[:id])
