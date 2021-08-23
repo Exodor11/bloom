@@ -25,7 +25,7 @@
     <div style="display: flex; justify-content: space-around; padding-top: 15px;">
       <% if current_user == @user %>
         <a class="btn-form" href="<%= edit_user_registration_path(@user) %>"><i style="padding-right: 5px;" class="far fa-edit"> edit</i></a>
-        <a class="btn-form" href="<%= new_user_invitation_path %>"><i class="fas fa-feather"> status</i></a>
+        <a class="btn-form" href="<%= user_editstatus_path(@user) %>"><i class="fas fa-feather"> status</i></a>
         <a class="btn-form" href="<%= new_user_invitation_path %>"><i class="far fa-paper-plane"> invite</i></a>
       <% end %>
     </div>
@@ -41,10 +41,11 @@
   </div>
 
   <hr>
-    <article style="font-size: 90%;"><%= @user.bio_action_text %></article>
+    <article style="font-size: 90%;"><%= @user.status_action_text %></article>
   <hr>
-    <article><%= @user.contact_action_text %></article>
+    <article><%= @user.bio_action_text %></article>
   <hr>
+  <article style="font-size: 90%;"><%= @user.contact_action_text %></article>
 </div>
 
 <div class="container">
