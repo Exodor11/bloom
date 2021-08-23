@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
     get "ownposts", to: "users#ownposts"
 
+    get "editstatus", to: "users#editstatus"
+    put "updatestatus", to: "users#updatestatus"
+
   end
 
   resources :posts do

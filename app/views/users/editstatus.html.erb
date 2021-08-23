@@ -1,0 +1,41 @@
+<div class="container">
+
+  <h1>Share your Mood 🚀</h1>
+
+  <%= simple_form_for [ @user ], url: user_updatestatus_path, :method => :put do |f| %>
+    <%= f.rich_text_area :status_action_text %>
+
+    <%= f.submit "Share my Status", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<nav class="menu">
+    <a href="<%= posts_path %>" class="menu-item">
+      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Daily insights</span>
+    </a>
+    <a href="<%= new_post_path %>" class="menu-item">
+      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Add post</span>
+    </a>
+    <a href="<%= search_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Search</span>
+    </a>
+    
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Profile</span>
+    </a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
+</nav>

@@ -60,4 +60,21 @@ class UsersController < ApplicationController
     # @posts = Post.post_saved.where(user: @user)
   end
 
+  def editstatus
+    @user = current_user
+  end
+
+  def updatestatus
+    @user = current_user
+    @user.update(user_params)
+    @user.save!
+    redirect_to @user
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:bio_action_text, :contact_action_text, :status_action_text, :user_id )
+  end
 end
