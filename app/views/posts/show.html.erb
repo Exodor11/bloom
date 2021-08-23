@@ -1,6 +1,6 @@
 <div>
   <div class="title-post">
-    <h1 style="margin: 2% 10% 3% 10%; font-size: 25px; font-weight: bold; margin-top: 15px;"><%=@post.title%></h1>
+    <h1 style="margin: 2% 5% 3% 5%; font-size: 25px; font-weight: bold; margin-top: 15px;"><%=@post.title%></h1>
   </div>
 
   <div class="post-image">
@@ -73,7 +73,7 @@
 
   <div style="margin: 2% 5% 0 5%">
     <% @post.tags.each do |tag| %>
-        <span class="tag tag-color-test"><%= tag.name %></span>
+        <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
     <% end %>
 </div>
 <br>

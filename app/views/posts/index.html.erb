@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Daily Insights</h1>
+<h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1>
 
 
 <div class="container">
@@ -7,14 +7,14 @@
         <div class="card-header">
           <a href="<%= post_path(post.id)%>">
             <% if post.photo.attached? %>
-              <img src="<%= cl_image_path post.photo.key, height: 300, crop: :fill %>" alt="rover" />
+              <img style ="object-fit: contain" src="<%= cl_image_path post.photo.key %>" alt="rover" />
             <% end %>
           </a>
         </div>
 
         <div class="tags">
           <% post.tags.each do |tag| %>
-            <span class="tag tag-color-test"><%= tag.name %></span>
+            <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
           <% end %>
         </div>
 
