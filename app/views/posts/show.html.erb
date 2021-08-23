@@ -44,7 +44,7 @@
 
           <% if @post.post_saved.find_by(user_id: current_user.id).present? %>
             <div style="padding-left: 137px;">
-              <a class="" data-method="delete" href="<%= post_unsave_path(@post) %>"><i class="far fa-bookmark" style="font-size: 20px; color: #167FFB;"></i></a>
+              <a class="" data-method="delete" href="<%= post_unsave_path(@post) %>"><i class="fas fa-bookmark" style="font-size: 20px; color: #167FFB;"></i></a>
             </div>
           <% else %>
               <div style="padding-left: 137px;">
@@ -54,7 +54,7 @@
 
           <% if @post.post_upvoted.find_by(user_id: current_user.id).present? %>
             <div style="padding-left: 15px;">
-              <a class="" data-method="delete" href="<%= post_unvote_path(@post) %>"><i class="far fa-thumbs-up" style="font-size: 20px; color: #167FFB"></i></a>
+              <a class="" data-method="delete" href="<%= post_unvote_path(@post) %>"><i class="fas fa-thumbs-up" style="font-size: 20px; color: #167FFB"></i></a>
             </div>
           <% else %>
               <div style="padding-left: 15px;">
