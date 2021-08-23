@@ -1,10 +1,10 @@
 <!-- <h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s followings</h1> -->
-<h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s followings</h1>
+<h1 style="text-align: center; margin-top: 4%;">followings</h1>
 <div class="container">
   <hr>
   <% @followings.each do |following| %>
     <a href="<%= user_path(following.id) %>">
-      <div class="card-product mb-3">
+      <div class="card-product mb-1">
         <% if following.photo.attached? %>
             <img src="<%= cl_image_path following.photo.key, height: 300, crop: :fill %>" alt="user" />
         <% end %>
