@@ -7,7 +7,7 @@
       <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", class: 'new-searchbar' }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -16,11 +16,11 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
 
-      <%= f.input :first_name, placeholder: "Your first name", label: "First name (max. 20 characters)", input_html: { maxlength: 20 } %>
-      <%= f.input :last_name, placeholder: "Your last name", label: "Last name (max. 20 characters)", input_html: { maxlength: 20 } %>
+      <%= f.input :first_name, placeholder: "Your first name", label: "First name (max. 20 characters)", input_html: { maxlength: 20, class: 'new-searchbar' } %>
+      <%= f.input :last_name, placeholder: "Your last name", label: "Last name (max. 20 characters)", input_html: { maxlength: 20, class: 'new-searchbar' } %>
       <%= f.input :photo, as: :file %>
-      <%= f.input :bio, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength: 500 } %>
-      <%= f.input :contact_text, placeholder: "Your contact info", label: "Where do you want to be contacted? (max. 400 characters)", input_html: { maxlength: 400 } %>
+      <%= f.input :bio, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength, class: 'new-searchbar': 500 } %>
+      <%= f.input :contact_text, placeholder: "Your contact info", label: "Where do you want to be contacted? (max. 400 characters)", input_html: { maxlength: 400, class: 'new-searchbar' } %>
 
       <%= f.label :contact_action_text %>
       <%= f.rich_text_area :contact_action_text %>
