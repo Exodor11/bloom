@@ -85,6 +85,14 @@
         <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
     <% end %>
   </div>
+
+  <hr>
+  <div style="margin: % 5% 0 5%">
+    <h4 class="description-post" style="margin: -1% 5% 3% 5%; font-style: italic; font-size: 10px;">If your read this far, you may want to connect</h4>
+    <%= @post.user.contact_action_text %>
+  </div>
+
+
 <br>
 <br>
 <br>
