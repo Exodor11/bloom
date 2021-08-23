@@ -2,9 +2,9 @@
 
   <h1>Edit your post</h1>
   <%= simple_form_for [ @post ] do |f| %>
-    <%= f.input :title, placeholder: "Post Title" %>
-    <%= f.input :description, placeholder: "A short description" %>
-    <%= f.input :text, placeholder: "Text" %>
+    <%= f.input :title, placeholder: "Your post's title", label: "Title (max. 120 characters)", input_html: { maxlength: 120 } %>
+    <%= f.input :description, placeholder: "A short description of your post", label: "Description (max. 180 characters)", input_html: { maxlength: 140 } %>
+    <%= f.input :text, placeholder: "Your insight" %>
     <%# <%= f.input :category, collection: Post.categories.keys %>
     <%= f.input :category,
               as: :radio_buttons,
@@ -43,7 +43,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>

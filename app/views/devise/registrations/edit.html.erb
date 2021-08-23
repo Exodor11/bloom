@@ -12,12 +12,12 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
+      <%= f.input :first_name, placeholder: "Your first name", label: "First name (max. 20 characters)", input_html: { maxlength: 20 } %>
+      <%= f.input :last_name, placeholder: "Your last name", label: "Last name (max. 20 characters)", input_html: { maxlength: 20 } %>
       <%= f.input :photo, as: :file,
                   hint: "leave it blank if you don't want to change it" %>
-      <%= f.input :bio %>
-      <%= f.input :contact_text %>
+      <%= f.input :bio, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength: 500 } %>
+      <%= f.input :contact_text, placeholder: "Your contact info", label: "Where do you want to be contacted? (max. 400 characters)", input_html: { maxlength: 400 } %>
       <%= f.association :tags,
                   as: :check_boxes,
                   input_html: { class: "tag-selector" },
@@ -66,7 +66,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
@@ -79,4 +79,3 @@
     </a>
     <% end %>
 </nav>
-
