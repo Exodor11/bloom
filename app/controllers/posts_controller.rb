@@ -4,12 +4,24 @@ class PostsController < ApplicationController
     if params[:query].present?
       sql_query = " \
         posts.title ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR tags.name ILIKE :query \
         "
-      @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
+      @posts = Post.joins(:user).joins(:post_tags).where("posts.id = post_tags.post_id").joins(:tags).where("tags.id = post_tags.tag_id").where(sql_query, query: "%#{params[:query]}%").distinct
+      # @posts = Post.joins(:post_tags).where("posts.id = post_tags.post_id")
+      # @posts = Post.joins(:tags).where("tags.id = post_tags.tag_id AND tags.name='#{params[:query]}'")
+      # @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
+      # @post = PostTag.joins(:post).where(sql_query, query: "%#{params[:query]}%")
+      # @post_tags = PostTag.joins(:tag).where(sql_query, query: "%#{params[:query]}%")
+
+      # @posts = Post.all.where(sql_query, query: "%#{params[:query]}%")
     else
       @posts = Post.all
     end
   end
+
+  # Post.joins("JOIN post_tags ON posts.id = post_tags.post_id JOIN tags ON tags.id = post_tags.tag_id AND tags.name='entrepreneurship'")
+
 
   def show
     @post = Post.find(params[:id])
@@ -52,6 +64,18 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
+  def upvotes
+    @post = Post.find(params[:post_id])
+    @user = current_user
+    @upvoters = @post.users
+    # @upvoters = []
+
+    # @upvotes.each do |upvote|
+    #   @upvoters << User.find_by(id: upvote.user_id)
+    # end
+    # return @upvoters
+  end
+
   def unvote
     @post = Post.find(params[:post_id])
     @post.post_upvoted.where(user: current_user).destroy_all
@@ -74,33 +98,19 @@ class PostsController < ApplicationController
     redirect_to @post
   end
 
-  def ownposts
-    @user = User.find(params[:user_id])
-    @posts = Post.where(user: @user)
-  end
-
-  def savedposts
-    @user = User.find(params[:user_id])
-    @all_posts = Post.all
-    @saved_posts = []
-
-    @all_posts.each do |post|
-      @saved_posts << post if post.post_saved.where(user: @user).present?
-    end
-    return @saved_posts
-    # @posts = Post.post_saved.where(user: @user)
-  end
-
   def dailyinsights
     @user = current_user
-    @user_tags = @user.tags
+    @user_tags = @user.tags.map { |tag| tag.name }
+
     @all_posts = Post.all
     @my_mix = []
 
     @all_posts.each do |post|
-      @my_mix << post if post.tags.where(name: @user)
+      post.tags.each do |tag|
+        @my_mix << post if @user_tags.include?(tag.name) && !@my_mix.include?(post)
+      end
     end
-    return @saved_posts
+    return @my_mix
   end
 
 

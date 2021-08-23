@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :tags, through: :user_tags
   has_many :posts
   has_many :post_saved
+  has_many :saved_posts, through: :post_saved, source: :post
+  
   has_many :post_upvoted
   has_many :follower_contacts, class_name: "Contact", foreign_key: "following_id"
   has_many :following_contacts, class_name: "Contact", foreign_key: "follower_id"
@@ -12,7 +14,10 @@ class User < ApplicationRecord
   has_many :followings, through: :following_contacts
 
   has_one_attached :photo
+
+  has_rich_text :bio_action_text
   has_rich_text :contact_action_text
+  has_rich_text :status_action_text
 
   # include PgSearch::Model
   # pg_search_scope :search_by_first_name_and_last_name,

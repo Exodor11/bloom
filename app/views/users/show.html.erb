@@ -41,11 +41,54 @@
   </div>
 
   <hr>
-    <article style="font-size: 90%;"><%= @user.bio %></article>
+    <article style="font-size: 90%;"><%= @user.bio_action_text %></article>
   <hr>
-    <article><%= @user.contact_text %></article>
+    <article><%= @user.contact_action_text %></article>
   <hr>
 </div>
+
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="card">
+        <div class="card-header">
+          <a href="<%= post_path(post.id)%>">
+            <% if post.photo.attached? %>
+              <img style ="object-fit: contain" src="<%= cl_image_path post.photo.key %>" alt="rover" />
+            <% end %>
+          </a>
+        </div>
+
+        <div class="tags">
+          <% post.tags.each do |tag| %>
+            <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+          <% end %>
+        </div>
+
+        <div class="card-body">
+          <a style="text-decoration: none;" href="<%= post_path(post.id)%>">
+            <h4 style="color: black;"class="card-title"><%= post.title %></h4>
+          </a>
+          <p><%= post.description %> </p>
+
+          <div class="user">
+            <a href="<%= user_path(post.user) %>">
+              <% if post.user.photo.attached? %>
+                <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
+              <% end %>
+            </a>
+            <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
+
+          </div>
+
+        </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
 
 <!-- Profile ends here -->
 <nav class="menu">

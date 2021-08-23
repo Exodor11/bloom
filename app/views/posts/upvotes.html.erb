@@ -1,0 +1,56 @@
+<h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s upvoters</h1>
+
+
+<div class="container">
+  <% @upvoters.each do |upvoter| %>
+    <a href="<%= user_path(upvoter.id) %>">
+      <div class="card-product mb-3">
+        <% if upvoter.photo.attached? %>
+            <img src="<%= cl_image_path upvoter.photo.key, height: 300, crop: :fill %>" alt="user" />
+        <% end %>
+
+        <div class="card-product-infos">
+          <h2><%= upvoter.first_name %> <%= upvoter.last_name %></h2>
+          <p><%= upvoter.bio %></p>
+          <div class="tags">
+            <% upvoter.tags.each do |tag| %>
+              <span class="tag tag-<%= tag.name %>"><%= tag.name %></span>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  <% end %>
+</div>
+
+<br>
+<br>
+<br>
+
+<nav class="menu">
+    <a href="<%= posts_path %>" class="menu-item">
+      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Daily insights</span>
+    </a>
+    <a href="<%= new_post_path %>" class="menu-item">
+      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Add post</span>
+    </a>
+    <a href="<%= search_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Search</span>
+    </a>
+
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Profile</span>
+    </a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
+</nav>
