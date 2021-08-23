@@ -18,11 +18,10 @@
 
       <%= f.input :first_name %>
       <%= f.input :last_name %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :bio %>
-      <%= f.input :contact_text %>
 
-      <%= f.label :contact_action_text %>
+      <%= f.input :photo, as: :file %>
+
+      <%= f.rich_text_area :bio_action_text %>
       <%= f.rich_text_area :contact_action_text %>
 
       <%= f.association :tags,
@@ -33,13 +32,6 @@
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= form_with model: @user do |form| %>
-  <div class="field">
-    <%= form.label :contact_action_text %>
-    <%= form.rich_text_area :contact_action_text %>
   </div>
 <% end %>
 
