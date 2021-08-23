@@ -6,11 +6,21 @@
   font-weight: lighter;
   transition: opacity 0.3s ease;
 }
-.btn-ghost:hover {
-  opacity: 1;
+
+.btn-form {
   color: white;
-  background-color:grey;
+  border: 2px solid #167FFB;
+  padding: 0px 3px;
+  border-radius: 50px;
+  width: fit-content;
+  background-color: #167FFB;
+
+  input.btn {
+  color: white;
 }
+
+}
+
 
 .follow {
   color: #167FFB;

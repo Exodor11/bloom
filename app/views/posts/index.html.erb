@@ -1,4 +1,4 @@
-<h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1>
+<!-- <h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1> -->
 
 
 <!-- <div class="container"> -->
@@ -23,7 +23,7 @@
             <h4 style="color: black;"class="card-title"><%= post.title %></h4>
           </a>
           <p><%= post.description %> </p>
-          
+
           <div class="user">
             <a href="<%= user_path(post.user) %>">
               <% if post.user.photo.attached? %>
@@ -31,9 +31,9 @@
               <% end %>
             </a>
             <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
-            
+
           </div>
-          
+
         </div>
     </div>
   <% end %>
@@ -45,7 +45,7 @@
 
 <nav class="menu">
     <a href="<%= posts_path %>" class="menu-item">
-      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
     <a href="<%= new_post_path %>" class="menu-item">

@@ -1,5 +1,5 @@
 <div class="container">
-
+<br>
   <h1>Drop an insight 🚀</h1>
   <%= simple_form_for [ @post ] do |f| %>
     <%= f.input :title, placeholder: "Your post's title", label: "Title (max. 120 characters)", input_html: { maxlength: 120, class: 'new-searchbar' } %>
@@ -26,11 +26,9 @@
 <br>
 <br>
 <br>
-<br>
-
 <nav class="menu">
     <a href="<%= posts_path %>" class="menu-item">
-      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
     <a href="<%= new_post_path %>" class="menu-item">

@@ -1,9 +1,9 @@
 $font: 'Nunito', sans-serif;
 .card {
-  margin: 10px;
+  margin: 8px;
   background-color: #fff;
-  border-radius: 5px;
-  // box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 100%;
   margin-right: auto;
@@ -32,7 +32,7 @@ $font: 'Nunito', sans-serif;
 }
 .tag {
   background: #91C4F2;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 10px;
   margin: 0;
   color: #fff;
