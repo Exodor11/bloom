@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
     post "upvote", to: "posts#upvote"
     delete "unvote", to: "posts#unvote"
+
+    get "upvotes", to: "posts#upvotes"
   end
 
   get "dailyinsights", to: "posts#dailyinsights"
