@@ -32,7 +32,7 @@
 
 <nav class="menu">
     <a href="<%= posts_path %>" class="menu-item">
-      <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
+      <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
     <a href="<%= new_post_path %>" class="menu-item">
@@ -43,7 +43,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>

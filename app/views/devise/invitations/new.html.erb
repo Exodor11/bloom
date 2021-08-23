@@ -1,5 +1,4 @@
-<div class="container">
-
+<div class="container mt-2">
   <h2><%= t "devise.invitations.new.header" %></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
@@ -11,11 +10,36 @@
       </div>
     <% end -%>
 
-    <div class="form-actions">
-      <%= f.button :submit, t("devise.invitations.new.submit_button") %>
+    <div class="form-actions btn-form">
+     <%= f.button :submit, "Send an invitation 🚀" %>
     </div>
   <% end %>
-  
+
 </div>
 
+<nav class="menu">
+    <a href="<%= posts_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Daily insights</span>
+    </a>
+    <a href="<%= new_post_path %>" class="menu-item">
+      <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Add post</span>
+    </a>
+    <a href="<%= search_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Search</span>
+    </a>
 
+    <% if user_signed_in? %>
+    <a href="<%= user_path(current_user) %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Profile</span>
+    </a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="menu-item">
+      <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>
+      <span class="menu-item-label">Log in</span>
+    </a>
+    <% end %>
+</nav>
