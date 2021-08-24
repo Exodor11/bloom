@@ -19,7 +19,7 @@ User.destroy_all
 puts "Adding new stuff"
 
 #TAG SEEDS
-tag1 = Tag.create(name:"Business", category:"business")
+tag1 = Tag.create(name:"business", category:"business")
 tag2 = Tag.create(name:"technology", category:"technology")
 tag3 = Tag.create(name:"finance", category:"finance")
 tag4 = Tag.create(name:"entrepreneurship", category:"entrepreneurship")
