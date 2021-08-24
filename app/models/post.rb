@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   
   has_one_attached :photo
 
+  has_rich_text :text_action_text
+
 
   enum category: [ :my_ideas, :ideas_from_others, :freestyle ]
 
