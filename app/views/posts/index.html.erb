@@ -35,7 +35,7 @@
                 <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
               <% end %>
             </a>
-            <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
+            <h5 style="font-size: 14px;"> <%= post.user.first_name%> <%= post.user.last_name %></h5>
 
           </div>
 
@@ -49,7 +49,7 @@
 <br>
 
 <nav class="menu">
-    <a href="<%= posts_path %>" class="menu-item">
+    <a href="<%= posts_path %>" class="menu-item active-page">
       <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>

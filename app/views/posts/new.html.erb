@@ -20,9 +20,11 @@
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
+  
     <%= f.submit "Share this insights with the guilde !", class: "btn-post" %>
   <% end %>
 </div>
+<br>
 <br>
 <br>
 <br>
@@ -31,7 +33,7 @@
       <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
-    <a href="<%= new_post_path %>" class="menu-item">
+    <a href="<%= new_post_path %>" class="menu-item active-page">
       <span class="material-icons"><i class="far fa-plus-square" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Add post</span>
     </a>
