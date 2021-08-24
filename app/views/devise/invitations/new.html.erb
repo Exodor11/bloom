@@ -6,7 +6,7 @@
 
     <% resource.class.invite_key_fields.each do |field| -%>
       <div class="form-inputs">
-        <%= f.input field %>
+        <%= f.input field, input_html: { class: 'new-searchbar' } %>
       </div>
     <% end -%>
 

@@ -1,7 +1,8 @@
-<h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s followers</h1>
+<h1 style="text-align: center; margin-top: 4%;">followers</h1>
 
 
 <div class="container">
+  <hr>
   <% @followers.each do |follower| %>
     <a href="<%= user_path(follower.id) %>">
       <div class="card-product mb-3">
@@ -12,14 +13,10 @@
         <div class="card-product-infos">
           <h2><%= follower.first_name %> <%= follower.last_name %></h2>
           <p><%= follower.bio %></p>
-          <div class="tags">
-            <% follower.tags.each do |tag| %>
-              <span class="tag tag-<%= tag.name %>"><%= tag.name %></span>
-            <% end %>
           </div>
         </div>
-
       </div>
+  <hr>
     </a>
   <% end %>
 </div>
