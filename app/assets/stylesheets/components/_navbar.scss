@@ -75,3 +75,11 @@ body {
   color: mix(#fff, #167FFB, 5%);
   transition: 0.25s ease;
 }
+
+a.active-page {
+  background-color: #167FFB;
+}
+
+a.active-page span {
+  color: white;
+}
