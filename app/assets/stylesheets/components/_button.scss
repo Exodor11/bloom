@@ -30,6 +30,20 @@
   background-color: #8ac0ff;;
 }
 
+.btn-profile-plus {
+  color: white;
+  border: 2px solid #167FFB;
+  padding: 4px 10px;
+  border-radius: 50px;
+  width: fit-content;
+  background-color: #8ac0ff;
+
+   input.btn {
+  color: white;
+}
+
+}
+
 .btn-post {
   color: white;
   border: 2px solid #167FFB;
@@ -40,6 +54,7 @@
 
   input.btn {
   color: white;
+  font-style: bolder;
 }
 
 .btn-file {
@@ -94,4 +109,9 @@
 }
 .msg-following {
   font-weight: bolder;
+}
+
+.modal-header .close {
+    padding: 0.5rem 1rem;
+    margin: -1rem -1rem -1rem auto;
 }

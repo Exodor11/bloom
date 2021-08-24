@@ -16,7 +16,7 @@
 
       <%= f.rich_text_area :bio_action_text, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength, class: 'new-searchbar': 500 } %>
       <%= f.rich_text_area :contact_action_text, placeholder: "Your contact info", label: "Where do you want to be contacted? (max. 400 characters)", input_html: { maxlength: 400, class: 'new-searchbar' } %>
-      
+
       <%= f.association :tags,
                   as: :check_boxes,
                   input_html: { class: "tag-selector" },
@@ -24,7 +24,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "ONBOARD", :class => 'btn btn-primary' %>
+      <%= f.button :submit, "ONBOARD", :class => 'btn btn-profile-plus' %>
     </div>
   <% end %>
 

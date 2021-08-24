@@ -4,8 +4,8 @@
 
   <%= simple_form_for [ @user ], url: user_updatestatus_path, :method => :put do |f| %>
     <%= f.rich_text_area :status_action_text %>
-
-    <%= f.submit "Share my Status", class: "btn btn-primary" %>
+<br>
+    <%= f.submit "Update my Status", class: "btn btn-profile-plus" %>
   <% end %>
 </div>
 <br>
@@ -26,7 +26,7 @@
       <span class="material-icons"><i class="fas fa-search" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Search</span>
     </a>
-    
+
     <% if user_signed_in? %>
     <a href="<%= user_path(current_user) %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-user-circle" style="font-size: 20px"></i></span>

@@ -8,15 +8,15 @@
   <% end %>
   </div>
   <div style="display: flex; justify-content: center;" class="profile-picture">
-      
+
       <% if @user.status_action_text.id != nil %>
-      
+
         <% if !@user.status_action_text.body.to_plain_text.empty? %>
-            
+
             <%= link_to user_showstatus_path(@user), remote: true do %>
                 <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
             <% end %>
-        
+
         <% else %>
           <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
         <% end %>
@@ -28,6 +28,7 @@
   </div>
 
   <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
+  <p style="text-align: center; padding-top: 2px;"><small>@founder</small></p>
 
   <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
     <a href="<%= user_followers_path(@user.id) %>">
@@ -42,7 +43,7 @@
       <% if current_user == @user %>
 
         <a class="btn-profile" href="<%= edit_user_registration_path(@user) %>"><i style="padding-right: 5px;" class="far fa-edit"> edit</i></a>
-        <a class="btn-profile" href="<%= user_editstatus_path(@user)%>"><i class="fas fa-feather"> status</i></a>
+        <a class="btn-profile" href="<%= user_editstatus_path(@user)%>"><i class="fas fa-lightbulb"> status</i></a>
         <a class="btn-profile" href="<%= new_user_invitation_path %>"><i class="far fa-paper-plane"> invite</i></a>
         <a class="btn-profile" href="<%=user_savedposts_path(@user)%>"><i class="far fa-bookmark"> saved</i></a>
 
@@ -59,16 +60,17 @@
     <% end %>
   </div>
 
-  <hr>
-    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article>
-  <hr>
+<!--   <hr>
+    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article> -->
+<!--   <hr> -->
+<br>
     <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
   <hr>
   <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
   <hr>
 </div>
 
-<div class="container">
+<!-- <div class="container"> -->
   <% @posts.each do |post| %>
     <div class="card">
         <div class="card-header">
@@ -104,7 +106,7 @@
         </div>
     </div>
   <% end %>
-</div>
+<!-- </div> -->
 
 <br>
 <br>
