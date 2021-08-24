@@ -8,7 +8,15 @@
   <% end %>
   </div>
   <div style="display: flex; justify-content: center;" class="profile-picture">
-    <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+      <% if @user.status_action_text.body.to_plain_text.present? %>
+          
+          <%= link_to user_showstatus_path(@user), remote: true do %>
+              <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+          <% end %>
+      
+      <% else %>
+        <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+      <% end %>
   </div>
 
   <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
@@ -119,3 +127,5 @@
     </a>
     <% end %>
 </nav>
+<div id='status-content'></div>
+

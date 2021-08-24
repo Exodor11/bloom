@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get "editstatus", to: "users#editstatus"
     put "updatestatus", to: "users#updatestatus"
 
+    get "showstatus", to: "users#showstatus"
+
   end
 
   resources :posts do
