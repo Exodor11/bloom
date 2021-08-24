@@ -23,10 +23,10 @@
 
   <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
     <a href="<%= user_followers_path(@user.id) %>">
-      <span><strong><%= @user.followers.count %></strong><small> followers</small></span>
+      <span><strong><%= @user.followers.count %></strong><small> <%= "follower".pluralize(@user.followers.count) %></small></span>
     </a>
     <a href="<%= user_followings_path(@user.id) %>">
-      <span><strong><%= @user.followings.count %></strong><small> followings</small></span>
+      <span><strong><%= @user.followings.count %></strong><small> <%= "following".pluralize(@user.followings.count) %></small></span>
     </a>
   </div>
 
