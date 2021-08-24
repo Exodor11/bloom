@@ -42,7 +42,7 @@ require("@rails/actiontext")
 
 import $ from 'jquery'
 
-window.jQuery = $;
+global.jQuery = $;
 window.$ = $;
 
 

@@ -8,7 +8,7 @@
   <% end %>
   </div>
   <div style="display: flex; justify-content: center;" class="profile-picture">
-      <% if @user.status_action_text.body.to_plain_text.present? %>
+      <% if !@user.status_action_text.body.nil? %>
           
           <%= link_to user_showstatus_path(@user), remote: true do %>
               <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
