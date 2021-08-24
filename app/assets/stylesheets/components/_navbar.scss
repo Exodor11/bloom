@@ -51,11 +51,11 @@ body {
     text-decoration: none;
     .material-icons {
       font-family: Open Sans;
-      color: #F87666;
+      color: #167FFB;
     }
 
     .menu-item-label {
-      color: #F87666;
+      color: #167FFB;
     }
   }
 }
@@ -77,9 +77,9 @@ body {
 }
 
 a.active-page {
-  background-color: #167FFB;
-}
-
-a.active-page span {
-  color: white;
+  border: 3px solid #167FFB;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
 }
