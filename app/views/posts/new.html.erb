@@ -15,12 +15,12 @@
               label_method: ->(obj){ Post.category_label(obj) },
               value_method: ->(obj){ obj[0] },
               collection: Post.categories %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, as: :file, class: "btn-file"%>
     <%= f.association :tags,
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },
                     item_wrapper_class: 'tag-item' %>
-    <%= f.submit "Share this post with the world!", class: "btn btn-primary" %>
+    <%= f.submit "Share this insights with the guilde !", class: "btn-post" %>
   <% end %>
 </div>
 <br>

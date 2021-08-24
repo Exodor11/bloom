@@ -1,13 +1,15 @@
 $font: 'Nunito', sans-serif;
 .card {
-  margin: 8px;
+  margin: 10px;
+  margin-top: 0px;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  border: 2px, solid, black;
 }
 .card-header img {
   width: 100%;
