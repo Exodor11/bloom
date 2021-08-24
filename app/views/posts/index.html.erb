@@ -36,7 +36,7 @@
                 <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
               <% end %>
             </a>
-            <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
+            <h5 style="font-size: 14px;"> <%= post.user.first_name%> <%= post.user.last_name %></h5>
 
           </div>
 
