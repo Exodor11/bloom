@@ -14,15 +14,28 @@
         <% if !@user.status_action_text.body.to_plain_text.empty? %>
             
             <%= link_to user_showstatus_path(@user), remote: true do %>
-                <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+                <% if @user.photo.attached? %>
+                  <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+                <% else  %>
+                  <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+                <% end %>
             <% end %>
         
         <% else %>
-          <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+            <% if @user.photo.attached? %>
+              <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>"> 
+            <% else  %>
+                <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+            <% end %>
         <% end %>
 
       <% else %>
-        <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+
+        <% if @user.photo.attached? %>
+          <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+        <% else  %>
+         <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+        <% end %>
       <% end %>
 
   </div>

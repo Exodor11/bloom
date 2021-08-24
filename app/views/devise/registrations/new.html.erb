@@ -20,7 +20,7 @@
       <%= f.input :last_name, placeholder: "Your last name", label: "Last name (max. 20 characters)", input_html: { maxlength: 20, class: 'new-searchbar' } %>
       <%= f.input :photo, as: :file %>
 
-      <%= f.rich_text_area :bio_action_text, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength, class: 'new-searchbar': 500 } %>
+      <%= f.rich_text_area :bio_action_text, placeholder: "Tell people about yourself", label: "Enter your bio here (max. 500 characters)", input_html: { maxlength: 500 , class: 'new-searchbar' } %>
       <%= f.rich_text_area :contact_action_text, placeholder: "Your contact info", label: "Where do you want to be contacted? (max. 400 characters)", input_html: { maxlength: 400, class: 'new-searchbar' } %>
 
       <%= f.association :tags,
