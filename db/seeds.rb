@@ -52,16 +52,16 @@ nathan.save!
 
 
 #USER_TAGS SEEDS
-romain.tags << [tag1, tag2, tag3, tag4]
+romain.tags << [tag1, tag2, tag3 ]
 romain.save
 
-marc.tags << [tag2, tag3, tag8, tag6]
+marc.tags << [tag2, tag3, tag8 ]
 marc.save
 
-nico.tags << [tag4, tag2, tag9, tag8]
+nico.tags << [tag4, tag2, tag9 ]
 nico.save
 
-nathan.tags << [tag1, tag2, tag4, tag10]
+nathan.tags << [tag1, tag2, tag4 ]
 nathan.save
 
 
