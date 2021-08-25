@@ -82,12 +82,26 @@
 <!--   <hr>
     <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article> -->
 <!--   <hr> -->
-<br>
+  <br>
+
     <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
   <hr>
   <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
   <hr>
+
+  <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style: italic;">My interests: </h4>
+  <% @user.tags.each do |tag| %>
+          <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+      <% end %>
+  </article>
+  <hr>
+
+  <h5 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Recent Posts:</h5>
+
+  <!-- <h5 style="font-size: 80%; font-size: 90%; font-style:bold;">Latest Posts: </h5> -->
 </div>
+
+
 
 <!-- <div class="container"> -->
   <% @posts.each do |post| %>
