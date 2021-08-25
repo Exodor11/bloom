@@ -5,6 +5,10 @@ class Post < ApplicationRecord
   has_many :post_saved
   has_many :post_upvoted
   has_many :users, through: :post_upvoted
+
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :text, presence: true
   
   has_one_attached :photo
 
