@@ -33,75 +33,76 @@ $font: 'Nunito', sans-serif;
   padding: 20px;
 }
 .tag {
-  background: #91C4F2;
+  background: orange;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 11px;
   margin: 0;
   color: #fff;
   padding: 2px 10px;
   text-transform: uppercase;
   cursor: pointer;
 }
-.tag-technology {
+.tag-📡 {
   // border: 1px solid #47BCD4;
   background-color: #007FFF;
   color: white;
 }
-.tag-finance {
+.tag-📈 {
   // border: 1px solid green;
   background-color: #00F5D4;
   color: white;
 }
-.tag-entrepreneurship {
+.tag-🤹 {
   // border: 1px solid #CD5B9F;
   background-color: #9B5DE5;
   color: white;
 }
 
-.tag-Business {
+.tag-💰 {
   // border: 1px solid lightblue;
   background-color: #91C4F2;
   color: white;
 }
 
-.tag-sciences {
+.tag-🧬 {
   // border: 1px solid yellow;
   background-color: #FEE440;
   color: white;
 
 }
-.tag-psychology {
+.tag-🎭 {
   // border: 1px solid ;
   background-color: #FF3F00;
   color: white;
 }
 
-.tag-politics {
+.tag-⚖️ {
   // border: 1px solid violet;
   background-color: #E67F0D;
   color: white;
 
 }
 
-.tag-health {
+.tag-🥦 {
   // border: 1px solid violet;
   background-color: red;
   color: white;
 
 }
 
-.tag-philosophy {
+.tag-🧞‍♂️ {
 background-color: orange;
 color: white;
 
 }
 
-.tag-sociology {
+.tag-👓 {
   background-color: #37d28b;
   color: white;
 
 
 }
+
 
 .card-body p {
   font-size: 13px;
@@ -147,3 +148,5 @@ h5 {
 .fa-bookmark {
   font-size: 16px;
 }
+
+
