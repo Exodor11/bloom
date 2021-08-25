@@ -1,17 +1,18 @@
 .new-searchbar {
-border-radius: 10px;
-background-color: #fffef8;
-border-color: blue;
-border-width: 2px;
+border-radius: 50px;
+background-color: #F3F3F4;
+height: fit-content;
+border: 0px;
 
 }
 
 .btn-search {
   color: blue;
-  border: 2px solid blue;
-  padding: 8px 24px;
+  padding: 5px 10px;
   border-radius: 50px;
-  background-color: #fffef8;
+  background-color: #F3F3F4;
+  font-size: 21px;
+
 }
 
 .search-result-text {
