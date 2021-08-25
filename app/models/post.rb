@@ -8,8 +8,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :text, presence: true
-  
+  validates :text_action_text, presence: true
+
   has_one_attached :photo
 
   has_rich_text :text_action_text
@@ -25,7 +25,7 @@ class Post < ApplicationRecord
         return "Others' Ideas"
       when 2
         return "Freestyle"
-      end
+    end
   end
 
   # include PgSearch::Model
