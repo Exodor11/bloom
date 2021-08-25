@@ -41,7 +41,13 @@
   </div>
 
   <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
-  <p style="text-align: center; padding-top: 2px;"><small>@founder</small></p>
+  <p style="text-align: center;">
+    <% if @user.invited_by == nil %>
+      <p style="text-align: center;"><small><%= "@founder" %></small></p>
+    <% else %>
+      <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @user.invited_by.first_name %></small><small> <%= @user.invited_by.last_name %></small></p>
+    <% end %>
+
 
   <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
     <a href="<%= user_followers_path(@user.id) %>">
