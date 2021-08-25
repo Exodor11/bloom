@@ -19,11 +19,21 @@
     </div>
     <%end%>
   </div>
-<div class="container">
-<h5 style="text-align: left; margin-bottom: 0px; margin-top: 20px"><strong>Insights</strong></h5>
-</div>
+  <div class="container">
+    <h5 style="text-align: left; margin-bottom: 0px; margin-top: 20px"><strong>Members status</strong></h5>
+  </div>
+
+<% @users.each do |user| %>
+    <div class="wrapper-p">
+        <div class="card-tags-p">
+          <img style="border-radius: 40%; width: 50px; height: 50px; display: flex;" src="<%= cl_image_path user.photo.key, height: 300, crop: :fill %>">
+          <h2><strong><%=user.first_name %> <%=user.last_name %></strong></h2>
+        </div>
+    </div>
+  <% end %>
 <br>
 <br>
+
   <nav class="menu">
       <a href="<%= posts_path %>" class="menu-item">
         <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>

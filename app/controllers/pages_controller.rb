@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def search
     @tags = Tag.all
+    @users = User.all
   end
 end
