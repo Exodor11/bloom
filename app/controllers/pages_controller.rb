@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def search
+    @tags = Tag.all
   end
 end

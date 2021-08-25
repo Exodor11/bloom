@@ -1,15 +1,29 @@
-<div id="background-image">
-  <div class="container mt-4">
+<div class="container mt-4">
+  <h4 style="text-align: center; margin-bottom: 20px;"><strong>Discover fascinating insights</strong></h4>
     <div class="new-searchbar" >
       <%= form_tag posts_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control new-searchbar",
           style: "height: 43px",
-          placeholder: "Search insights by title, tag or author"%>
+          placeholder: " 🔍 Search insights by title, tag or author"%>
     </div>
       <% end %>
+<h5 style="text-align: left; margin-bottom: 0px; margin-top: 30px"><strong>Tags</strong></h5>
+</div>
+
+  <div class="wrapper">
+    <% @tags.each do |tag| %>
+    <div class="card-tags">
+          <h2><%=tag.name%></h2>
+    </div>
+    <%end%>
   </div>
+<div class="container">
+<h5 style="text-align: left; margin-bottom: 0px; margin-top: 20px"><strong>Insights</strong></h5>
+</div>
+<br>
+<br>
   <nav class="menu">
       <a href="<%= posts_path %>" class="menu-item">
         <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
@@ -36,4 +50,3 @@
       </a>
       <% end %>
   </nav>
-</div>

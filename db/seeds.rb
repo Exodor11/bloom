@@ -19,18 +19,16 @@ User.destroy_all
 puts "Adding new stuff"
 
 #TAG SEEDS
-tag1 = Tag.create(name:"business", category:"business")
-tag2 = Tag.create(name:"technology", category:"technology")
-tag3 = Tag.create(name:"finance", category:"finance")
-tag4 = Tag.create(name:"entrepreneurship", category:"entrepreneurship")
-tag5 = Tag.create(name:"sciences", category:"sciences")
-tag6 = Tag.create(name:"psychology", category:"psychology")
-tag7 = Tag.create(name:"sociology", category:"sociology")
-tag8 = Tag.create(name:"philosophy", category:"philosophy")
-tag9 = Tag.create(name:"politics", category:"politics")
-tag10 = Tag.create(name:"health", category:"health")
-
-
+tag1 = Tag.create(name:"💰 business", category:"business")
+tag2 = Tag.create(name:"📡 technology", category:"technology")
+tag3 = Tag.create(name:"📈 finance", category:"finance")
+tag4 = Tag.create(name:"🤹 entrepreneurship", category:"entrepreneurship")
+tag5 = Tag.create(name:"🧬 sciences", category:"sciences")
+tag6 = Tag.create(name:"🎭 psychology", category:"psychology")
+tag7 = Tag.create(name:"👓 sociology", category:"sociology")
+tag8 = Tag.create(name:"🧞‍♂️ philosophy", category:"philosophy")
+tag9 = Tag.create(name:"⚖️ politics", category:"politics")
+tag10 = Tag.create(name:"🥦 health", category:"health")
 
 #USER SEEDS + AVATAR
 romain = User.new(email: "romain@guilde.com", first_name: 'Romain', last_name: 'Losey', bio: 'Busy building a life I do not need to escape from', contact_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/romain-losey/' , password: '12345678', password_confirmation: '12345678')
@@ -76,7 +74,7 @@ contact3 = Contact.create(follower: romain, following: nathan)
 contact4 = Contact.create(follower: nathan, following: romain)
 
 #POST SEEDS
-post1 = Post.new(title: 'How to Identify a Pseudo-Smart Person', 
+post1 = Post.new(title: 'How to Identify a Pseudo-Smart Person',
                 description: "Just sharing some wisdom on the controversial topic of smartness",
                 text: 'Over my career as a copywriter, I’ve interviewed dozens of top performers. I’ve been privileged to have genuine, deep 1-on-1 conversations with heads of multi-million dollar businesses. These are aggressively smart people, who make me feel humbled just by their presence.
                 It’s comical how different these people are from my peers. Many of my acquaintances feel extremely smart. They have zero achievements to back up their ego. Even when every piece of evidence shows that they’re not so smart, they find a smart reason why the world is wrong and they’re right.
@@ -108,7 +106,7 @@ post1 = Post.new(title: 'How to Identify a Pseudo-Smart Person',
                 Partly it’s because truly smart people realize how futile most conversations are. After years of trial and error, they come to find a truth that their words rarely lead to any tangible result. Instead, they focus on actions.
                 Another reason is that they’re good listeners. Aggressively smart people are smart for a reason — they’ve had lots and lots of other aggressively smart people tell them things about life and business. To do that, they’ve learned to be good listeners.
                 It’s also an ego thing. If you know you can beat someone in a discussion, why not just let them talk? What’s the point of proving what you already know and spend tons of energy in the process?
-                Whenever you hear someone dominate a conversation — beware, you’re most likely dealing with a pseudo-intellectual.', 
+                Whenever you hear someone dominate a conversation — beware, you’re most likely dealing with a pseudo-intellectual.',
                 user: romain)
 post1.photo.attach(io: URI.open('https://media.makeameme.org/created/i-know-everything-ad0efd48df.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
 post1.save!
@@ -122,16 +120,16 @@ post2 = Post.new(title: "Data Scientists Will be Extinct in 10 Years",
                 What Does This Mean?
                 Data scientists will be extinct in 10 years (give or take), or at least the role title will be. Going forward, the skill set collectively known as data science will be borne by a new generation of data savvy business specialists and subject matter experts who are able to imbue analysis with their deep domain knowledge, irrespective of whether they can code or not. Their titles will reflect their expertise rather than the means by which they demonstrate it, be it compliance specialists, product managers or investment analysts. We don’t need to look back far to find historic precedents. During the advent of the spreadsheet, data entry specialists were highly coveted, but nowadays, as Cole Nussbaumer Knaflic (the author of “Storytelling With Data”) aptly observes, proficiency with Microsoft Office suite is a bare minimum. Before that, the ability to touch type with a typewriter was considered a specialist skill, however with the accessibility of personal computing it has also become assumed.
                 Lastly, for those considering a career in data science or commencing their studies, it may serve you well to constantly refer back to the Venn diagram that you will undoubtedly come across. It describes data science as an confluence of statistics, programming and domain knowledge. Despite each occupying an equal share of the intersecting area, some may warrant a higher weighting than others.
-                Disclaimer: Views are my own, based on my observations and experiences. It’s ok if you don’t agree, productive discussion is welcome.', 
+                Disclaimer: Views are my own, based on my observations and experiences. It’s ok if you don’t agree, productive discussion is welcome.',
                 user: marc)
 post2.photo.attach(io: URI.open('https://miro.medium.com/max/1230/1*Wsfwcke-uxvfW3zkMtNWnw.jpeg'), filename: 'post.jpg', content_type: 'image/jpg')
 post2.save!
 
 post3 = Post.new(title: "Why Managers Fear a Remote-Work Future",
                 description: "Like it or not, the way we work has already evolved",
-                text: 'For many workers, COVID-19’s impact has depended greatly on one question: Can I work from home or am I tethered to my workplace? Quarantines, lockdowns, and self-imposed isolation have pushed tens of millions around the world to work from home, accelerating a workplace experiment that had struggled to gain traction before COVID-19 hit. 
+                text: 'For many workers, COVID-19’s impact has depended greatly on one question: Can I work from home or am I tethered to my workplace? Quarantines, lockdowns, and self-imposed isolation have pushed tens of millions around the world to work from home, accelerating a workplace experiment that had struggled to gain traction before COVID-19 hit.
                 Now, well into the pandemic, the limitations and the benefits of remote work are clearer. Although many people are returning to the workplace as economies reopen—the majority could not work remotely at all—executives have indicated in surveys that hybrid models of remote work for some employees are here to stay. The virus has broken through cultural and technological barriers that prevented remote work in the past, setting in motion a structural shift in where work takes place, at least for some people. Now that vaccines are awaiting approval, the question looms: To what extent will remote work persist? In this article, we assess the possibility for various work activities to be performed remotely. Building on the McKinsey Global Institute’s body of work on automation, AI, and the future of work, we extend our models to consider where work is performed.1 Our analysis finds that the potential for remote work is highly concentrated among highly skilled, highly educated workers in a handful of industries, occupations, and geographies.
-                More than 20 percent of the workforce could work remotely three to five days a week as effectively as they could if working from an office. If remote work took hold at that level, that would mean three to four times as many people working from home than before the pandemic and would have a profound impact on urban economies, transportation, and consumer spending, among other things.', 
+                More than 20 percent of the workforce could work remotely three to five days a week as effectively as they could if working from an office. If remote work took hold at that level, that would mean three to four times as many people working from home than before the pandemic and would have a profound impact on urban economies, transportation, and consumer spending, among other things.',
                 user: marc)
 post3.photo.attach(io: URI.open('https://remote-tools-images.s3.amazonaws.com/work-from-home-memes/16.jpg'), filename: 'post.jpg', content_type: 'image/jpg')
 post3.save!
@@ -146,7 +144,7 @@ post4 = Post.new(title: "The Magic Of Gamification with Real-Life Examples",
                       It’s not as much fun organizing your work, finances, trying to lead a healthier or more eco-friendly lifestyle, and so on.
                       And that’s when gamification comes in. Let’s cover the basics of gamification, and dive into gamification in real-life with some examples.
                       What Is Gamification? Gamification is a rather new concept in a grand scheme of things. New products get developed every day and brand loyalty is at its worst. It’s not enough that your product does what it is supposed to well.
-                      It has to make a user enjoy the process, maybe even become addicted to the product, in a way. You can include the following elements to gamify your app even more:', 
+                      It has to make a user enjoy the process, maybe even become addicted to the product, in a way. You can include the following elements to gamify your app even more:',
                 user: nico)
 post4.photo.attach(io: URI.open('http://blog.emakina.com/wp-content/uploads/2011/10/tumblr_lp9s9uLH1l1qhr7tw.jpeg'), filename: 'post.jpg', content_type: 'image/jpg')
 post4.save!
@@ -156,33 +154,33 @@ post5 = Post.new(title: "10 Business Articles Every Entrepreneur Should Read",
                 text: 'The Top 20 Business Articles:
                 1. Mark Cuban Says These are The Dumbest Things Entrepreneurs Do, Entrepreneur
                 Most likely, you’ve watched Mark Cuban on Shark Tank, or know of his various business ventures. Therefore, it’s clear that he knows a thing or two about running a businesses. In this article, Cuban implores new entrepreneurs not to fall into three, easy-to-miss traps.
-                
+
                 2. How Do Small Business Loans Work? The Fora Financial Blog
                 If you’re interested in pursuing additional financing for you business, it’s crucial to understand how the small business loan process works. In this comprehensive guide, we explain how to apply, qualify for, and repay a business loan. By doing this correctly, you can receive the financing that your business requires!
-                
+
                 3. What Makes a Leader? Harvard Business Review
                 Business owners have to wear many hats, and most importantly, they have to be strong leaders. In this article, Harvard Business Review discusses what a leader looks like, and how you can improve your leadership skills.
-                
+
                 4. Why You Hate Work, New York Times
                 Just 13 percent of workers worldwide report feeling fulfilled at work, so it’s no wonder so many people hate their jobs. As a business owner, you need to cultivate an environment that gives employees what they need to be fulfilled — this article provides a roadmap.
-                
+
                 5. 50 Signs You Might Be an Entrepreneur, Entrepreneur.com
                 Are you struggling to find a career that you’re passionate about? Or, maybe you don’t enjoy working for yourself and would rather work independently. If so, you might be the type of person that would excel as an entrepreneur. Check out the 50 signs that reveal your entrepreneurial tendencies.
-                
+
                 6. How to Become a Millionaire by 30, Entrepreneur.com
                 Entrepreneurship isn’t just about making money; one of the most notable reasons is that many people want to work for themselves. In this article, Grant Cardone reveals his ten steps on his path to becoming a millionaire.
-                
+
                 7. Why Google Doesn’t Care About College Degrees, VentureBeat.com
                 Look no further than Google for validation that you don’t need a college degree to start a business. This article reviews five reasons executives at Google don’t care about college degrees in their hiring process.
-                
+
                 8. 7 Rejections, Medium.com
                 Airbnb’s CEO Brian Chesky received five rejection letters from potential investors and was ignored by the other two he wrote to. This article reviews the seven rejections Chesky received as he sought funding for his company that changed the travel industry.
-                
+
                 9. My Advice to First-Time Entrepreneurs, Medium.com
                 In his Medium.com article, Gary Vaynerchuk highlights his top three pieces of advice for first-time entrepreneurs.
-                
+
                 10. The Best Startup Advice You’ll Ever Receive, ProductHunt.com
-                This article packs a punch, delivering the best startup advice from some of the country’s best founders.', 
+                This article packs a punch, delivering the best startup advice from some of the country’s best founders.',
                 user: nathan)
 post5.photo.attach(io: URI.open('https://miro.medium.com/max/400/1*iFOeoAhVD2Wojgk9P66vUg.jpeg'), filename: 'post.jpg', content_type: 'image/jpg')
 post5.save!
@@ -194,7 +192,7 @@ post5.save!
 
 post101 = Post.new(title: "America's decline on the world stage",
                 description: "Kabul is yet another domino for the declining giant",
-                text: "The taliban is not the North Vietnamese army,” declared President Joe Biden on July 8th, days after America abandoned Bagram air base, the hub of its war in Afghanistan for 20 years, without telling its Afghan commander. 
+                text: "The taliban is not the North Vietnamese army,” declared President Joe Biden on July 8th, days after America abandoned Bagram air base, the hub of its war in Afghanistan for 20 years, without telling its Afghan commander.
                 “They’re not remotely comparable in terms of capability. There’s going to be no circumstance where you see people being lifted off the roof of the embassy of the United States from Afghanistan.” By August 15th Chinooks were rattling windows in Kabul, shuttling American diplomats from their hulking embassy. At the city’s airport, desperate Afghans swarmed the runway; some clung to the undercarriage of a c-17 transporter, falling to their deaths. ",
                 user: romain)
 post101.photo.attach(io: URI.open('https://www.economist.com/img/b/1280/720/90/sites/default/files/images/print-edition/20210821_FBP001_0.jpg'), filename: 'post101.jpg', content_type: 'image/jpg')

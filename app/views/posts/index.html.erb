@@ -19,7 +19,7 @@
 
         <div class="tags">
           <% post.tags.each do |tag| %>
-            <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+            <span class="tag tag-<%=tag.name.first%>"><%= tag.name %></span>
           <% end %>
         </div>
 

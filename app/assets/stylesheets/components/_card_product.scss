@@ -32,6 +32,37 @@
   color: black;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
+
+
+.card-tags {
+    height: 50px;
+    background:  #f3f0f0;
+    border-radius: 10px;
+    width: fit-content;
+    display: flex;
+    margin-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    font-family: Nunito, sans-serif;
 }
+
+
+.card-tags h2 {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Nunito, sans-serif;
+  text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+
