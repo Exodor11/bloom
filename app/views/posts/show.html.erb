@@ -79,11 +79,12 @@
   <div class="text-post">
     <article style="margin: 0 5% 0 5%; font-size: 90%;"><%= @post.text_action_text %></article>
   </div>
-
-  <div style="margin: 2% 5% 0 5%">
-    <% @post.tags.each do |tag| %>
-        <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
-    <% end %>
+  <div class="container mt-2">
+    <div class="tags">
+            <% @post.tags.each do |tag| %>
+              <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+            <% end %>
+    </div>
   </div>
 <div class="container">
 <div style="margin-top: 15px; margin-bottom: 15px;background-color: #f3f0f0; border-radius: 10px; padding: 10px 10px 10px 10px" class="container">
