@@ -87,7 +87,7 @@
     <hr>
     <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
     <hr>
-    <h4 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;"> My interests:</h4>
+    <h4 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;"> My tags:</h4>
     <div class="tags">
     <% @user.tags.each do |tag| %>
             <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
