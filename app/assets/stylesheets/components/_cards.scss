@@ -1,6 +1,6 @@
 $font: 'Nunito', sans-serif;
 .card {
-  margin: 10px;
+  margin: 6px;
   margin-top: 0px;
   background-color: #fff;
   border-radius: 5px;
@@ -107,7 +107,7 @@ color: white;
 
 .card-body p {
   font-size: 14px;
-  margin: 0 0 40px;
+  margin: 0 0 30px;
 }
 .user {
   // margin-top: auto;
@@ -137,8 +137,10 @@ h5 {
   font-family: $font;
 }
 .tags {
+  margin-top: 5px;
   display: inline-flex;
   flex-wrap: wrap;
+  padding-left: 13px;
 }
 .tags > span {
   margin: 5px;
