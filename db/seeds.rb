@@ -38,70 +38,72 @@ marc.save!
 
 nico = User.new(email: "nico@guilde.com", first_name: 'Nicholas', last_name: 'Martin',
   bio_action_text: '🤓 You miss 💯% of the shots you don’t take<br>👨‍🎓Future MBA Student in Geneva Switzerland 🇨🇭',
-  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nicholas-martin-777471203/ <br> Im always happy to chat there <br>My GitHub is cool too https://github.com/NickMartin95',
+  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/nicholas-martin-777471203/">LinkedIn</a> <br>',
+  status_action_text: 'Learning to code!',
   password: '12345678', password_confirmation: '12345678')
 nico.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624437133/tppabzxei90i8j8joyps.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 nico.save!
 
 nathan = User.new(email: "nathan@guilde.com", first_name: 'Nathan', last_name: 'Cohen',
-  bio_action_text: 'Exploring space with my amazing coding buddies',
-  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nathan-cohen-b7aa651a1/',
+  bio_action_text: '🚀 Exploring space with my amazing coding buddies <br>👨‍🎓 HSG Business Student <br> 👨🏻‍💼 Working on My Start-up <br>',
+  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/nathan-cohen-b7aa651a1/">LinkedIn</a> <br>',
+  status_action_text: 'Open for new design opportunities!',
   password: '12345678', password_confirmation: '12345678')
 nathan.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624987859/tr4zygrx5akfawfoh4vj.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 nathan.save!
 
 titus = User.new(email: "titus@guilde.com", first_name: 'Titus', last_name: 'Palivan',
   bio_action_text: '🏝️ Mindset: Buying my own private island for all the lovely ladies who want to hang out 😉 <br>🚀 I love space too, always happy to talk about it <br>👨‍🎓 HSG Alumni ',
-  contact_action_text: 'Stalk me on LinkedIn: https://www.linkedin.com/in/tituspalivan/',
+  contact_action_text: 'Stalk me on <a href="https://www.linkedin.com/in/tituspalivan/">LinkedIn</a> <br>',
   password: '12345678', password_confirmation: '12345678')
 titus.photo.attach(io: URI.open('https://www.trans-4-m.com/wp-content/uploads/2019/12/2019-10-28-TA-Course-St-Gallen-at-H4H-Titus.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 titus.save!
 
 richard = User.new(email: "richard@guilde.com", first_name: 'Richard', last_name: 'Polastro',
   bio_action_text: '📜 Getting my Masters Degree from HSG <br> 😎Living life one day at a time',
-  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/richar-polastro-b7hd551a1/',
+  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/richar-polastro-b7hd551a1/">LinkedIn</a> <br>',
   password: '12345678', password_confirmation: '12345678')
 # richard.photo.attach(io: URI.open(''), filename: 'profile.jpg', content_type: 'image/jpg')
 richard.save!
 
 colin = User.new(email: "colin@guilde.com", first_name: 'Colin', last_name: 'Schmidt',
   bio_action_text: '💭 MY dream is to become a freelance coder <br>💻 Interested in everything tech',
-  contact_action_text: 'Im on GitHub, check out my projects!: https://github.com/Colin-Schm',
+  contact_action_text: 'Check out my projects on <a href="https://github.com/Colin-Schm">GitHub</a> <br>',
   password: '12345678', password_confirmation: '12345678')
 colin.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/84576983?v=4'), filename: 'profile.jpg', content_type: 'image/jpg')
 colin.save!
 
 martin = User.new(email: "martin@guilde.com", first_name: 'Martin', last_name: 'Masoni',
   bio_action_text: '💻 Working in tech and honing my skills <br>🇨🇭 working in Switzerland',
-  contact_action_text: 'Check me out on GitHub: https://github.com/martzoni',
+  contact_action_text: 'Check me out on <a href="https://github.com/martzoni">GitHub</a> <br>',
   password: '12345678', password_confirmation: '12345678')
 martin.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624278691/wxhpylahlxlpcgvfvltf.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 martin.save!
 
 oscar = User.new(email: "oscar@guilde.com", first_name: 'Oscar', last_name: 'Nicoulaz',
                   bio_action_text: '🎶 Passionate about Techno Music <br>👨‍💻 Ex-Civil Engineer and Future Dev <br>☀️ Living in Vevey<br>',
-                  contact_action_text: 'Check me out on Instagram: https://www.instagram.com/oscarnicoulaz/',
+                  contact_action_text: 'Check me out on <a href="https://www.instagram.com/oscarnicoulaz/">Instagram</a>',
                   password: '12345678', password_confirmation: '12345678')
 oscar.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624525788/cku4rn3zcvcrr4ajpara.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 oscar.save!
 
 pablo = User.new(email: "pablo@guilde.com", first_name: 'Pablo', last_name: 'Lopez',
                   bio_action_text: '🇦🇷 Proud Argentinian living in Switzerland <br>💰 Working in Finance <br>🇸🇬 Off to Singapore soon<br>',
-                  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/pablo-roleri-lopez-a79a66a7/',
+                  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/pablo-roleri-lopez-a79a66a7/">LinkedIn</a> <br>',
                   password: '12345678', password_confirmation: '12345678')
 pablo.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/72790032?v=4'), filename: 'profile.jpg', content_type: 'image/jpg')
 pablo.save!
 
 alexandre = User.new(email: "alexandre@guilde.com", first_name: 'Alexandre', last_name: 'Stutz',
                   bio_action_text: '💪🏼 Passionate about Powerlifting <br>🖥 Future full-time Dev <br>😎 Always eager to connect<br>',
-                  contact_action_text: 'Please reach out to me on Facebook: https://www.facebook.com/alexandre.stutz.1',
+                  contact_action_text: 'Please reach out to me on <a href="https://www.facebook.com/alexandre.stutz.1">Facebook</a>',
                   password: '12345678', password_confirmation: '12345678')
 alexandre.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/83030764?v=4'), filename: 'profile.jpg', content_type: 'image/jpg')
 alexandre.save!
 
 hadrien = User.new(email: "hadrien@guilde.com", first_name: 'Hadrien', last_name: 'Morand',
                   bio_action_text: '👨‍🍳 EHL Alumni <br>🥃 Morand Family Business <br>📈 Passionate about Data Science & Coding<br>',
-                  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/hadrien-morand-b913b391/',
+                  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/hadrien-morand-b913b391/">LinkedIn</a> <br>',
                   password: '12345678', password_confirmation: '12345678')
 hadrien.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618567875/yn4g2hwed2br6rk47c5f.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 hadrien.save!
