@@ -27,10 +27,11 @@ tag10 = Tag.create(name:"🥦 health", category:"health")
 
 #USER SEEDS + AVATAR
 
-marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier",
-			bio_action_text: 'Busy building a life I do not need to escape from',
-			contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/mleplattenier/',
-			status_action_text: '',
+
+marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier", 
+			bio_action_text: '<div>🌎 Busy building a life I do not need to escape from<br>💪🏻 Full-time nerd &amp; Business Student<br>🎙️: Podcast Co-Host</div>', 
+			contact_action_text: 'I am an introvert so please reach out to me on <a href="https://www.linkedin.com/in/mleplattenier/">LinkedIn</a> 🤓',
+			status_action_text: 'Status: Coming back to St. Gallen soon, let us go mastermind together 🤓', 
 			password: '12345678', password_confirmation: '12345678')
 marc.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624023909/wfliysfgym33qlzi0dsd.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 marc.save!
@@ -146,12 +147,6 @@ romain.save
 #contact1 = Contact.create(follower: romain, following: marc)
 
 
-contact2 = Contact.create(follower: nathan, following: nico)
-contact3 = Contact.create(follower: nico, following: nathan)
-contact4 = Contact.create(follower: nathan, following: marc)
-contact4 = Contact.create(follower: nathan, following: marc)
-
-
 # Romain CONTACTS
 Contact.create(follower: titus, following: romain)
 Contact.create(follower: marc, following: romain)
@@ -168,12 +163,34 @@ Contact.create(follower: romain, following: titus)
 Contact.create(follower: titus, following: nathan)
 Contact.create(follower: marc, following: nathan)
 Contact.create(follower: nico, following: nathan)
-Contact.create(follower: romain, following: nathan)
+Contact.create(follower: hadrien, following: nathan)
 
 Contact.create(follower: nathan, following: marc)
 Contact.create(follower: nathan, following: nico)
 Contact.create(follower: nathan, following: hadrien)
 Contact.create(follower: nathan, following: titus)
+
+# MARC CONTACTS
+Contact.create(follower: titus, following: marc)
+Contact.create(follower: colin, following: marc)
+Contact.create(follower: nico, following: marc)
+Contact.create(follower: hadrien, following: marc)
+
+Contact.create(follower: marc, following: nathan)
+Contact.create(follower: marc, following: nico)
+Contact.create(follower: marc, following: hadrien)
+Contact.create(follower: marc, following: titus)
+
+#NICO CONTACTS
+Contact.create(follower: titus, following: nico)
+Contact.create(follower: colin, following: nico)
+Contact.create(follower: marc, following: nico)
+Contact.create(follower: hadrien, following: nico)
+
+Contact.create(follower: nico, following: nathan)
+Contact.create(follower: nico, following: marc)
+Contact.create(follower: nico, following: hadrien)
+Contact.create(follower: nico, following: titus)
 
 
 #POST SEEDS
@@ -361,6 +378,9 @@ entrepreneur2.save
 science2.tags << [tag5, tag7]
 science2.save
 
+
+PostUpvoted.create(user: marc, post: business1)
+PostUpvoted.create(user: marc, post: business2)
 
 
 puts "New stuff added successfully"
