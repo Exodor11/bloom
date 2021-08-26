@@ -14,9 +14,11 @@
 
   <div class="wrapper">
     <% @tags.each do |tag| %>
-    <div class="card-tags">
-          <h2><%=tag.name%></h2>
-    </div>
+      <a href="/posts?query=<%= tag.name.split.last %>">
+        <div class="card-tags">
+            <h2><%=tag.name%></h2>
+        </div>
+      </a>
     <%end%>
   </div>
   <div class="container">
