@@ -29,9 +29,9 @@ tag10 = Tag.create(name:"🥦 health", category:"health")
 
 
 marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier", 
-			bio_action_text: '<div>🌎 Busy building a life I do not need to escape from<br>💪🏻 Full-time nerd &amp; Business Student<br>🎙️: Podcast Co-Host</div>', 
+			bio_action_text: '<div>🌎 Busy building a life I do not need to escape from<br>💪🏻 Full-time nerd &amp; Business Student<br>🎙️ Podcast Co-Host</div>', 
 			contact_action_text: 'I am an introvert so please reach out to me on <a href="https://www.linkedin.com/in/mleplattenier/">LinkedIn</a> 🤓',
-			status_action_text: 'Status: Coming back to St. Gallen soon, let us go mastermind together 🤓', 
+			status_action_text: 'Coming back to St. Gallen soon, let us go mastermind together 🤓', 
 			password: '12345678', password_confirmation: '12345678')
 marc.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624023909/wfliysfgym33qlzi0dsd.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 marc.save!
@@ -46,8 +46,8 @@ nico.save!
 
 nathan = User.new(email: "nathan@guilde.com", first_name: 'Nathan', last_name: 'Cohen',
   bio_action_text: '🚀 Exploring space with my amazing coding buddies <br>👨‍🎓 HSG Business Student <br> 👨🏻‍💼 Working on My Start-up <br>',
-  contact_action_text: 'Please reach out to me on <a href="https://www.linkedin.com/in/nathan-cohen-b7aa651a1/">LinkedIn</a> <br>',
-  status_action_text: 'Open for new design opportunities!',
+  contact_action_text: '<div>Looking for mastermind buddies to drink tea &amp; discuss business ideas 🍵<br>Check out my <a href="https://www.bloodycycle.ch/">personal website</a><br>Or reach out to me on <a href="https://www.linkedin.com/in/nathan-cohen-b7aa651a1/">LinkedIn</a>&nbsp;<br>',
+  status_action_text: 'Just finished Le Wagon as <strong>Head of Design</strong> 👨‍🎨<br>Open for new design opportunities<br>Check out my <a href="https://github.com/Nathancod">Github</a> 🚀',
   password: '12345678', password_confirmation: '12345678')
 nathan.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624987859/tr4zygrx5akfawfoh4vj.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 nathan.save!
@@ -111,7 +111,7 @@ hadrien.save!
 romain = User.new(email: "romain@guilde.com", first_name: 'Romain', last_name: 'Losey',
 									bio_action_text: '📚 Part-time HSG student<br>🥩 Part-time cryogenic butcher<br>👨‍💻 Full-time nerd<br>',
 									status_action_text: '',
-									contact_action_text: 'I am bullish on <a href="https://www.linkedin.com/in/romain-losey/">LinkedIn</a><br>📨 Shoot me a DM&nbsp;<br>Looking forward to connect !' ,
+									contact_action_text: 'I am bullish on <a href="https://www.linkedin.com/in/romain-losey/">LinkedIn</a><br>📨 Shoot me a DM&nbsp;<br>Looking forward to connecting !' ,
 									password: '12345678', password_confirmation: '12345678')
 romain.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624455076/taxkkidiqfgsoecqktb3.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 romain.save!
@@ -280,7 +280,7 @@ health2.save!
 
 entrepreneur1 = Post.new(title: "Why the Lean Start-Up Changes Everything",
 		description: "Launching a new enterprise—whether it’s a tech start-up, a small business, or an initiative within a large corporation—has always been a hit-or-miss proposition.",
-		text_action_text: "Launching a new enterprise—whether it’s a tech start-up, a small business, or an initiative within a large corporation—has always been a hit-or-miss proposition. According to the decades-old formula, you write a business plan, pitch it to investors, assemble a team, introduce a product, and start selling as hard as you can. And somewhere in this sequence of events, you’ll probably suffer a fatal setback. The odds are not with you: As new research by Harvard Business School’s Shikhar Ghosh shows, 75% of all start-ups fail.<br>But recently an important countervailing force has emerged, one that can make the process of starting a company less risky. It’s a methodology called the “lean start-up,” and it favors experimentation over elaborate planning, customer feedback over intuition, and iterative design over traditional “big design up front” development. Although the methodology is just a few years old, its concepts—such as “minimum viable product” and “pivoting”—have quickly taken root in the start-up world, and business schools have already begun adapting their curricula to teach them.",
+		text_action_text: "<strong>Launching a new enterprise</strong>—whether it’s a tech start-up, a small business, or an initiative within a large corporation—has always been a hit-or-miss proposition. <br><br>According to the decades-old formula, you write a business plan, pitch it to investors, assemble a team, introduce a product, and start selling as hard as you can. And somewhere in this sequence of events, you’ll probably suffer a fatal setback.<strong>&nbsp;'</strong><strong><em>The odds are not with you':&nbsp;</em></strong>As new research by Harvard Business School’s Shikhar Ghosh shows, <strong>75% of all start-ups fail</strong>.<br><br>But recently an important countervailing force has emerged, one that can make the process of starting a company less risky. It’s a methodology called the “lean start-up,” and it favors experimentation over elaborate planning, customer feedback over intuition, and iterative design over traditional “big design up front” development. Although the methodology is just a few years old, its concepts—such as “minimum viable product” and “pivoting”—have quickly taken root in the start-up world, and business schools have already begun adapting their curricula to teach them.",
 		user: nathan)
 entrepreneur1.photo.attach(io: URI.open('https://iq.opengenus.org/content/images/2019/12/tesla_1.png'), filename: 'entrepreneur.jpg' , content_type: 'image/jpg')
 entrepreneur1.save!
