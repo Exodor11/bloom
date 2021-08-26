@@ -73,24 +73,36 @@ colin.save!
 
 martin = User.new(email: "martin@guilde.com", first_name: 'Martin', last_name: 'Masoni',
   bio_action_text: '💻 Working in tech and honing my skills <br>🇨🇭 working in Switzerland',
-  contact_action_text: 'Check me out on GitHub: hhttps://github.com/martzoni',
+  contact_action_text: 'Check me out on GitHub: https://github.com/martzoni',
   password: '12345678', password_confirmation: '12345678')
 martin.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624278691/wxhpylahlxlpcgvfvltf.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 martin.save!
 
-oscar = User.new(email: "oscar@guilde.com", first_name: 'Oscar', last_name: 'Nicoulaz', bio_action_text: '', contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nathan-cohen-b7aa651a1/', password: '12345678', password_confirmation: '12345678')
+oscar = User.new(email: "oscar@guilde.com", first_name: 'Oscar', last_name: 'Nicoulaz',
+                  bio_action_text: '🎶 Passionate about Techno Music <br>👨‍💻 Ex-Civil Engineer and Future Dev <br>☀️ Living in Vevey<br>',
+                  contact_action_text: 'Check me out on Instagram: https://www.instagram.com/oscarnicoulaz/',
+                  password: '12345678', password_confirmation: '12345678')
 oscar.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624525788/cku4rn3zcvcrr4ajpara.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 oscar.save!
 
-pablo = User.new(email: "pablo@guilde.com", first_name: 'Pablo', last_name: 'Lopez', bio_action_text: '', contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nathan-cohen-b7aa651a1/', password: '12345678', password_confirmation: '12345678')
+pablo = User.new(email: "pablo@guilde.com", first_name: 'Pablo', last_name: 'Lopez',
+                  bio_action_text: '🇦🇷 Proud Argentinian living in Switzerland <br>💰 Working in Finance <br>🇸🇬 Off to Singapore soon<br>',
+                  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/pablo-roleri-lopez-a79a66a7/',
+                  password: '12345678', password_confirmation: '12345678')
 pablo.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/72790032?v=4'), filename: 'profile.jpg', content_type: 'image/jpg')
 pablo.save!
 
-alexandre = User.new(email: "alexandre@guilde.com", first_name: 'Alexandre', last_name: 'Stutz', bio_action_text: '', contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nathan-cohen-b7aa651a1/', password: '12345678', password_confirmation: '12345678')
+alexandre = User.new(email: "alexandre@guilde.com", first_name: 'Alexandre', last_name: 'Stutz',
+                  bio_action_text: '💪🏼 Passionate about Powerlifting <br>🖥 Future full-time Dev <br>😎 Always eager to connect<br>',
+                  contact_action_text: 'Please reach out to me on Facebook: https://www.facebook.com/alexandre.stutz.1',
+                  password: '12345678', password_confirmation: '12345678')
 alexandre.photo.attach(io: URI.open('https://avatars.githubusercontent.com/u/83030764?v=4'), filename: 'profile.jpg', content_type: 'image/jpg')
 alexandre.save!
 
-hadrien = User.new(email: "hadrien@guilde.com", first_name: 'Hadrien', last_name: 'Morand', bio_action_text: '', contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/nathan-cohen-b7aa651a1/', password: '12345678', password_confirmation: '12345678')
+hadrien = User.new(email: "hadrien@guilde.com", first_name: 'Hadrien', last_name: 'Morand',
+                  bio_action_text: '👨‍🍳 EHL Alumni <br>🥃 Morand Family Business <br>📈 Passionate about Data Science & Coding<br>',
+                  contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/hadrien-morand-b913b391/',
+                  password: '12345678', password_confirmation: '12345678')
 hadrien.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618567875/yn4g2hwed2br6rk47c5f.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 hadrien.save!
 
