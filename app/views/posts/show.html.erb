@@ -15,7 +15,7 @@
       </a>
     <% end %>
 
-    <h5 style="font-size: 14px;"><span><%=@post.user.first_name%> </span><span><%=@post.user.last_name%></span></h5>
+    <h5 style="font-size: 14px; margin-bottom: 0px;"><span><%=@post.user.first_name%> </span><span><%=@post.user.last_name%></span></h5>
 
     <div class="show-interaction">
 
@@ -35,8 +35,8 @@
 
           </div>
           <div style="font-size: 20px; display: flex;">
-            <a style="padding-left: 45px;" href="<%= %>"><i class="fas fa-arrow-alt-circle-up"></i></a>
-            <small><%= @post.post_upvoted.count%></small>
+            <a style="padding-left: 45px;" href="<%= %>"><i class="fas fa-thumbs-up"></i></a>
+            <small style="margin-left: 2px; color: #167FFB;"><%= @post.post_upvoted.count%></small>
           </div>
         </div>
 

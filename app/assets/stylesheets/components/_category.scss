@@ -50,6 +50,10 @@
   border-color: #FFC65A;
 }
 
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+    color: white;
+}
+
 
 #snippet_category_css + label {
   color: #62DDF5;
