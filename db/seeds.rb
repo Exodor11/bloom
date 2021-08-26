@@ -157,6 +157,41 @@ business2 = Post.new(title: "The Best Business Blogs Every Entrepreneur Should B
 business2.photo.attach(io: URI.open('https://miro.medium.com/max/1000/1*qVGmZn-3Npku-1qdU4-KHg.jpeg'), filename: 'business2.jpg' , content_type: 'image/jpg')
 business2.save!
 
+business3 = Post.new(title: "10 Business Articles Every Entrepreneur Should Read",
+    description: "Just sharing my personal reading list on entrepreneurship, enjoy!",
+    text_action_text: "",
+    user: nico)
+business3.photo.attach(io: URI.open('https://miro.medium.com/max/400/1*iFOeoAhVD2Wojgk9P66vUg.jpeg'), filename: 'business3.jpg' , content_type: 'image/jpg')
+business3.save!
+
+psycho2 = Post.new(title: "How Minecraft is helping children with autism make new friends",
+    description: "Playing video games online can be antisocial – but the Autcraft community is helping children with autism learn social skills and build relationships",
+    text_action_text: "",
+    user: nico)
+psycho2.photo.attach(io: URI.open('https://cdn.minecraft-resourcepacks.com/wp-content/uploads/2021/01/minecraft-meme-2.jpg'), filename: 'psycho2.jpg' , content_type: 'image/jpg')
+psycho2.save!
+
+socio2 = Post.new(title: "The Magic Of Gamification with Real-Life Examples",
+    description: "Engagement is essentially the thing that makes the world go round. Do you know some great gamification examples?",
+    text_action_text: "",
+    user: nico)
+socio2.photo.attach(io: URI.open('http://blog.emakina.com/wp-content/uploads/2011/10/tumblr_lp9s9uLH1l1qhr7tw.jpeg'), filename: 'socio2.jpg' , content_type: 'image/jpg')
+socio2.save!
+
+entrepreneur2 = Post.new(title: "Why does everyone want to be an entrepreneur nowadays?",
+    description: "Everyone says that they want to be an entrepreneur because it’s cool, again.",
+    text_action_text: "",
+    user: nico)
+entrepreneur2.photo.attach(io: URI.open('https://miro.medium.com/max/1000/1*iKPqdjkTLDETVM6GhIclNw.jpeg'), filename: 'entrepreneur2.jpg' , content_type: 'image/jpg')
+entrepreneur2.save!
+
+science2 = Post.new(title: "Massive volcanoes could cool Earth more in a warming world",
+    description: "It’s become increasingly clear that even these monumental forces are being altered by human-driven climate change",
+    text_action_text: "",
+    user: nico)
+science2.photo.attach(io: URI.open('https://media.makeameme.org/created/volcanoes-erupting-to.jpg'), filename: 'science2.jpg' , content_type: 'image/jpg')
+science2.save!
+
 
 
 
@@ -199,5 +234,22 @@ socio1.save
 
 business2.tags << [tag1, tag4]
 business2.save
+
+business3.tags << [tag1, tag4]
+business3.save
+
+psycho2.tags << [tag6, tag10]
+psycho2.save
+
+socio2.tags << [tag7, tag2]
+socio2.save
+
+entrepreneur2.tags << [tag4]
+entrepreneur2.save
+
+science2.tags << [tag5]
+science2.save
+
+
 
 puts "New stuff added successfully"
