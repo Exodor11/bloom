@@ -85,15 +85,12 @@
         <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
     <% end %>
   </div>
-
-  <hr>
-  <div style="margin: % 5% 0 5%", class="container">
-    <h4 class="description-post" style="margin: 0% 5% 3% 0%;font-size: 14px;"><strong>If you read this far, you may want to connect...</strong></h4>
-    <%= @post.user.contact_action_text %>
-  </div>
-
-
-<br>
+<div class="container">
+<div style="margin-top: 15px; margin-bottom: 15px;background-color: #f3f0f0; border-radius: 10px; padding: 10px 10px 10px 10px" class="container">
+    <h4 class="description-post" style="font-size: 14px;"><strong>If you read this far, you may want to connect...</strong></h4>
+    <div style="font-size: 13px;"><%= @post.user.contact_action_text %></div>
+</div>
+</div>
 <br>
 <br>
 <br>
