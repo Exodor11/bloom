@@ -42,10 +42,10 @@
 
     <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
     <p style="text-align: center;"></p>
-      <% if @user.invited_by == nil %>
+      <% if @user == @users.first %>
         <p style="text-align: center;"><small><%= "@founder" %></small></p>
       <% else %>
-        <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @user.invited_by.first_name %></small><small> <%= @user.invited_by.last_name %></small></p>
+        <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @previous_user.first_name %></small><small> <%= @previous_user.last_name %></small></p>
       <% end %>
 
 
