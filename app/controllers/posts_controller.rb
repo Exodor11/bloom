@@ -99,18 +99,22 @@ class PostsController < ApplicationController
   end
 
   def dailyinsights
-    @user = current_user
-    @user_tags = @user.tags.map { |tag| tag.name }
+    if user_signed_in?
+      @user = current_user
+      @user_tags = @user.tags.map { |tag| tag.name }
 
-    @all_posts = Post.all
-    @my_mix = []
+      @all_posts = Post.all
+      @my_mix = []
 
-    @all_posts.each do |post|
-      post.tags.each do |tag|
-        @my_mix << post if @user_tags.include?(tag.name) && !@my_mix.include?(post)
+      @all_posts.each do |post|
+        post.tags.each do |tag|
+          @my_mix << post if @user_tags.include?(tag.name) && !@my_mix.include?(post)
+        end
       end
+      return @my_mix
+    else
+      redirect_to user_session_path
     end
-    return @my_mix
   end
 
 
