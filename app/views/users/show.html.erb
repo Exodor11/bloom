@@ -1,106 +1,102 @@
 <!-- profile starts here -->
 <div class=" container mt-2">
-  <div class="log">
-  <% if user_signed_in? %>
-      <a style="font-size: 14px; display: flex;"class="btn-ghost" data-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
-  <% else %>
-      <a style="font-size: 14px; display: flex;" class="btn-ghost" href="<%= new_user_session_path %>">Log in</a>
-  <% end %>
-  </div>
-  <div style="display: flex; justify-content: center;" class="profile-picture">
+    <div class="log">
+      <% if user_signed_in? %>
+          <a style="font-size: 14px; display: flex;"class="btn-ghost" data-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
+      <% else %>
+          <a style="font-size: 14px; display: flex;" class="btn-ghost" href="<%= new_user_session_path %>">Log in</a>
+      <% end %>
+    </div>
+      <div style="display: flex; justify-content: center;" class="profile-picture">
 
-      <% if @user.status_action_text.id != nil %>
+        <% if @user.status_action_text.id != nil %>
 
-        <% if !@user.status_action_text.body.to_plain_text.empty? %>
+          <% if !@user.status_action_text.body.to_plain_text.empty? %>
 
-            <%= link_to user_showstatus_path(@user), remote: true do %>
-                <% if @user.photo.attached? %>
-                  <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
-                <% else  %>
-                  <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
-                <% end %>
-            <% end %>
+              <%= link_to user_showstatus_path(@user), remote: true do %>
+                  <% if @user.photo.attached? %>
+                    <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+                  <% else  %>
+                    <img style="border: 5px solid orange; border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+                  <% end %>
+              <% end %>
+
+          <% else %>
+              <% if @user.photo.attached? %>
+                <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+              <% else  %>
+                  <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+              <% end %>
+          <% end %>
 
         <% else %>
-            <% if @user.photo.attached? %>
-              <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
-            <% else  %>
-                <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
-            <% end %>
+
+          <% if @user.photo.attached? %>
+            <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
+          <% else  %>
+           <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
+          <% end %>
         <% end %>
 
+    </div>
+
+    <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
+    <p style="text-align: center;"></p>
+      <% if @user.invited_by == nil %>
+        <p style="text-align: center;"><small><%= "@founder" %></small></p>
       <% else %>
-
-        <% if @user.photo.attached? %>
-          <img style="border-radius: 40%; width: 150px; height: 150px;" src="<%= cl_image_path @user.photo.key, height: 300, crop: :fill %>">
-        <% else  %>
-         <img style="border-radius: 40%; width: 150px; height: 150px;" src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
-        <% end %>
+        <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @user.invited_by.first_name %></small><small> <%= @user.invited_by.last_name %></small></p>
       <% end %>
 
-  </div>
 
-  <h5 style="text-align: center; margin-top: 10px; font-weight: bolder;"><%= @user.first_name %> <%= @user.last_name %></h5>
-  <p style="text-align: center;">
-    <% if @user.invited_by == nil %>
-      <p style="text-align: center;"><small><%= "@founder" %></small></p>
-    <% else %>
-      <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @user.invited_by.first_name %></small><small> <%= @user.invited_by.last_name %></small></p>
-    <% end %>
+    <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
+      <a href="<%= user_followers_path(@user.id) %>">
+        <span><strong><%= @user.followers.count %></strong><small> <%= "follower".pluralize(@user.followers.count) %></small></span>
+      </a>
+      <a href="<%= user_followings_path(@user.id) %>">
+        <span><strong><%= @user.followings.count %></strong><small> <%= "following".pluralize(@user.followings.count) %></small></span>
+      </a>
+    </div>
 
+      <div style="display: flex; justify-content: space-around; padding-top: 15px;">
+        <% if current_user == @user %>
 
-  <div style="display: flex; justify-content: space-around; padding-top: 15px;" class="follow-counter">
-    <a href="<%= user_followers_path(@user.id) %>">
-      <span><strong><%= @user.followers.count %></strong><small> <%= "follower".pluralize(@user.followers.count) %></small></span>
-    </a>
-    <a href="<%= user_followings_path(@user.id) %>">
-      <span><strong><%= @user.followings.count %></strong><small> <%= "following".pluralize(@user.followings.count) %></small></span>
-    </a>
-  </div>
+          <a class="btn-profile" href="<%= edit_user_registration_path(@user) %>"><i style="padding-right: 5px;" class="far fa-edit"></i> Edit</a>
+          <a class="btn-profile" href="<%= user_editstatus_path(@user)%>"><i class="fas fa-lightbulb"></i> Status</a>
+          <a class="btn-profile" href="<%= new_user_invitation_path %>"><i class="far fa-paper-plane"></i> Invite</a>
+          <a class="btn-profile" href="<%=user_savedposts_path(@user)%>"><i class="far fa-bookmark"></i> Saved</a>
 
-    <div style="display: flex; justify-content: space-around; padding-top: 15px;">
-      <% if current_user == @user %>
+        <% end %>
+      </div>
 
-        <a class="btn-profile" href="<%= edit_user_registration_path(@user) %>"><i style="padding-right: 5px;" class="far fa-edit"></i> Edit</a>
-        <a class="btn-profile" href="<%= user_editstatus_path(@user)%>"><i class="fas fa-lightbulb"></i> Status</a>
-        <a class="btn-profile" href="<%= new_user_invitation_path %>"><i class="far fa-paper-plane"></i> Invite</a>
-        <a class="btn-profile" href="<%=user_savedposts_path(@user)%>"><i class="far fa-bookmark"></i> Saved</a>
-
+    <div style="display: flex; justify-content: center; margin-top: 10px;"class="follow-centered">
+      <% if current_user != @user %>
+        <% if current_user.followings.find_by(id: @user.id).present? %>
+          <button class="following"><a style="text-decoration: none;" class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
+        <% else %>
+          <button class="follow"><a style="text-decoration: none;" data-method="post" href="<%= user_follow_path(@user) %>">follow</a></button>
+        <% end %>
       <% end %>
     </div>
 
-  <div style="display: flex; justify-content: center; margin-top: 10px;"class="follow-centered">
-    <% if current_user != @user %>
-      <% if current_user.followings.find_by(id: @user.id).present? %>
-        <button class="following"><a style="text-decoration: none;" class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
-      <% else %>
-        <button class="follow"><a style="text-decoration: none;" data-method="post" href="<%= user_follow_path(@user) %>">follow</a></button>
-      <% end %>
-    <% end %>
-  </div>
+    <!--   <hr>
+      <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article> -->
+    <!--   <hr> -->
+    <br>
+      <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
+    <hr>
+    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
+    <hr>
+    <h4 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;"> My interests:</h4>
+    <div class="tags">
+    <% @user.tags.each do |tag| %>
+            <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+        <% end %>
+    </div>
+    <hr>
+    <h5 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Recent Contributions:</h5>
 
-<!--   <hr>
-    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article> -->
-<!--   <hr> -->
-  <br>
-
-    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
-  <hr>
-  <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
-  <hr>
-
-  <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style: italic;">My interests: </h4>
-  <% @user.tags.each do |tag| %>
-          <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
-      <% end %>
-  </article>
-  <hr>
-
-  <h5 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Recent Contributions:</h5>
-
-  <!-- <h5 style="font-size: 80%; font-size: 90%; font-style:bold;">Latest Posts: </h5> -->
 </div>
-
 
 
 <!-- <div class="container"> -->
