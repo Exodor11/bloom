@@ -33,6 +33,8 @@
             <a href="<%= user_path(post.user) %>">
               <% if post.user.photo.attached? %>
                 <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
+              <% else %>
+                <img src="https://institutcoop.hec.ca/es/wp-content/uploads/sites/3/2020/02/Deafult-Profile-Pitcher.png">
               <% end %>
             </a>
             <h5 style="font-size: 14px;"> <%= post.user.first_name%> <%= post.user.last_name %></h5>
