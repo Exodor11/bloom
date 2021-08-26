@@ -253,40 +253,40 @@ science2.save!
 
 
 #POST TAGS SEEDS
-business1.tags << [tag1]
+business1.tags << [tag1, tag2]
 business1.save
 
-philosophy1.tags << [tag8]
+philosophy1.tags << [tag8, tag7, tag4]
 philosophy1.save
 
 health1.tags << [tag10]
 health1.save
 
-tech1.tags << [tag2]
+tech1.tags << [tag2, tag1]
 tech1.save
 
-finance1.tags << [tag3]
+finance1.tags << [tag3, tag4]
 finance1.save
 
-philo2.tags << [tag8]
+philo2.tags << [tag8, tag7]
 philo2.save
 
-science1.tags << [tag5]
+science1.tags << [tag5, tag2]
 science1.save
 
-psycho1.tags << [tag6]
+psycho1.tags << [tag6, tag7]
 psycho1.save
 
-philo3.tags << [tag8, tag6]
+philo3.tags << [tag8, tag6, tag4]
 philo3.save
 
-health2.tags << [tag10]
+health2.tags << [tag10, tag5]
 health2.save
 
-entrepreneur1.tags << [tag4]
+entrepreneur1.tags << [tag4, tag1]
 entrepreneur1.save
 
-socio1.tags << [tag7]
+socio1.tags << [tag7, tag2]
 socio1.save
 
 business2.tags << [tag1, tag4]
@@ -301,10 +301,10 @@ psycho2.save
 socio2.tags << [tag7, tag2]
 socio2.save
 
-entrepreneur2.tags << [tag4]
+entrepreneur2.tags << [tag4, tag1, tag8]
 entrepreneur2.save
 
-science2.tags << [tag5]
+science2.tags << [tag5, tag7]
 science2.save
 
 
