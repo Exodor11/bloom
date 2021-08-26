@@ -393,8 +393,16 @@ science2.tags << [tag5, tag7]
 science2.save
 
 
-PostUpvoted.create(user: marc, post: business1)
-PostUpvoted.create(user: marc, post: business2)
+PostUpvoted.create(user: marc, post: health2)
+PostUpvoted.create(user: nico, post: health2)
+PostUpvoted.create(user: nathan, post: health2)
+PostUpvoted.create(user: hadrien, post: health2)
+PostUpvoted.create(user: alexandre, post: health2)
+PostUpvoted.create(user: martin, post: health2)
+PostUpvoted.create(user: oscar, post: health2)
+PostUpvoted.create(user: pablo, post: health2)
+PostUpvoted.create(user: titus, post: health2)
+PostUpvoted.create(user: richard, post: health2)
 
 
 puts "New stuff added successfully"
