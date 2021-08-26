@@ -27,7 +27,11 @@ tag10 = Tag.create(name:"🥦 health", category:"health")
 
 #USER SEEDS + AVATAR
 
-marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier", bio_action_text: 'Busy building a life I do not need to escape from', contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/mleplattenier/', password: '12345678', password_confirmation: '12345678')
+marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier", 
+			bio_action_text: 'Busy building a life I do not need to escape from', 
+			contact_action_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/mleplattenier/',
+			status_action_text: '', 
+			password: '12345678', password_confirmation: '12345678')
 marc.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624023909/wfliysfgym33qlzi0dsd.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 marc.save!
 
@@ -71,7 +75,11 @@ hadrien = User.new(email: "hadrien@guilde.com", first_name: 'Hadrien', last_name
 hadrien.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1618567875/yn4g2hwed2br6rk47c5f.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 hadrien.save!
 
-romain = User.new(email: "romain@guilde.com", first_name: 'Romain', last_name: 'Losey', bio: 'Busy building a life I do not need to escape from', contact_text: 'Please reach out to me on LinkedIn: https://www.linkedin.com/in/romain-losey/' , password: '12345678', password_confirmation: '12345678')
+romain = User.new(email: "romain@guilde.com", first_name: 'Romain', last_name: 'Losey', 
+									bio_action_text: '📚 Part-time HSG student<br>🥩 Part-time cryogenic butcher<br>👨‍💻 Full-time nerd<br>', 
+									status_action_text: '', 
+									contact_action_text: 'I am bullish on <a href="https://www.linkedin.com/in/romain-losey/">LinkedIn</a><br>📨 Shoot me a DM&nbsp;<br>Looking forward to connect !' , 
+									password: '12345678', password_confirmation: '12345678')
 romain.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1624455076/taxkkidiqfgsoecqktb3.jpg'), filename: 'profile.jpg', content_type: 'image/jpg')
 romain.save!
 
@@ -118,9 +126,37 @@ romain.save
 # FOLLOWER = FOLLOWED (=> User.followers = list of users who follow User)
 # FOLLOWING = FOLLOWING (=> User.followings = list of users who are followed by User)
 #contact1 = Contact.create(follower: romain, following: marc)
+
+
 contact2 = Contact.create(follower: nathan, following: nico)
 contact3 = Contact.create(follower: nico, following: nathan)
 contact4 = Contact.create(follower: nathan, following: marc)
+contact4 = Contact.create(follower: nathan, following: marc)
+
+
+# Romain CONTACTS
+Contact.create(follower: titus, following: romain)
+Contact.create(follower: marc, following: romain)
+Contact.create(follower: nico, following: romain)
+Contact.create(follower: hadrien, following: romain)
+
+Contact.create(follower: romain, following: marc)
+Contact.create(follower: romain, following: nico)
+Contact.create(follower: romain, following: hadrien)
+Contact.create(follower: romain, following: titus)
+
+
+# NATHAN CONTACTS
+Contact.create(follower: titus, following: nathan)
+Contact.create(follower: marc, following: nathan)
+Contact.create(follower: nico, following: nathan)
+Contact.create(follower: romain, following: nathan)
+
+Contact.create(follower: nathan, following: marc)
+Contact.create(follower: nathan, following: nico)
+Contact.create(follower: nathan, following: hadrien)
+Contact.create(follower: nathan, following: titus)
+
 
 #POST SEEDS
 business1 = Post.new(title: "Tim Cook’s decade at Apple makes him the most successful successor CEO ever",
