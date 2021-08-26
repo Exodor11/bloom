@@ -76,7 +76,7 @@ business1.save!
 philosophy1 = Post.new(title: "You are Not Lazy or Undisciplined. You Have Internal Resistance.",
 		description: "Why you can’t just do it, and what to do instead",
 		text_action_text: "",
-		user: nathan)
+		user: nico)
 philosophy1.photo.attach(io: URI.open('https://i.imgflip.com/2qtvhx.jpg'), filename: 'philosophy1.jpg' , content_type: 'image/jpg')
 philosophy1.save!
 
@@ -87,16 +87,117 @@ health1 = Post.new(title: "I cut my body fat percentage almost in half after sta
 health1.photo.attach(io: URI.open('https://nexter.org/wp-content/uploads/2019/03/diet-weight-loss-memes-pic1.jpg'), filename: 'health1.jpg' , content_type: 'image/jpg')
 health1.save!
 
+tech1 = Post.new(title: "If software engineering is in demand, why is it so hard to get a software engineering job?",
+		description: "The demanding environment isn't always attrative for some.",
+		text_action_text: "",
+		user: nico)
+tech1.photo.attach(io: URI.open('https://www.probytes.net/wp-content/uploads/2018/01/3.jpg.jpg'), filename: 'tech1.jpg' , content_type: 'image/jpg')
+tech1.save!
+
+finance1 = Post.new(title: "What are the most important things to know about personal finance?",
+		description: "In the ever-evolving environment of finance, things are getting more and more complicated",
+		text_action_text: "",
+		user: nico)
+finance1.photo.attach(io: URI.open('https://i.imgur.com/itWHhbH.png'), filename: 'finance1.jpg' , content_type: 'image/jpg')
+finance1.save!
+
+philo2 = Post.new(title: "What is the most important question one has to ask oneself?",
+		description: "Not always easy to find the answer",
+		text_action_text: "",
+		user: nico)
+philo2.photo.attach(io: URI.open('https://s.yimg.com/ny/api/res/1.2/8BB7bb_.XU9F3S47PlwZEg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://media.zenfs.com/en-US/the_mighty_beauty_225/6db682d07916ca6e6c8073a1dd4033ba'), filename: 'philo2.jpg' , content_type: 'image/jpg')
+philo2.save!
+
+science1 = Post.new(title: "Measuring a black hole’s mass isn’t easy",
+		description: "A new technique will change this though",
+		text_action_text: "",
+		user: nico)
+science1.photo.attach(io: URI.open('https://static.boredpanda.com/blog/wp-content/uploads/2019/04/10-5caf31e692bae__700.jpg'), filename: 'science1.jpg' , content_type: 'image/jpg')
+science1.save!
+
+psycho1 = Post.new(title: "Which MBTI personality type is the most complex to understand?",
+		description: "This isn't as easy as you might think",
+		text_action_text: "",
+		user: nico)
+psycho1.photo.attach(io: URI.open('https://64.media.tumblr.com/75940d72a5faf1587e4af3aa3a471ae6/tumblr_pet6xuwlgx1v34reg_1280.jpg'), filename: 'psycho1.jpg' , content_type: 'image/jpg')
+psycho1.save!
+
+philo3 = Post.new(title: "The Most Important Ritual You Can Practice This Year",
+		description: "Why did Marcus Aurelius spend those precious hours in his tent, writing by the lamplight, even on the nights and mornings he strained under the burdens of his war-time duties? It wasn’t for our benefit.",
+		text_action_text: "",
+		user: nico)
+philo3.photo.attach(io: URI.open('https://i.chzbgr.com/full/9387061248/h2E90A2B9/funny-ok-boomer-meme-from-ancient-greece'), filename: 'philo3.jpg' , content_type: 'image/jpg')
+philo3.save!
+
+health2 = Post.new(title: "Training at the Gym, Training for Life: Creating Better Versions of the Self Through Exercise",
+		description: "The present study draws on Scott’s (2011) notion of the Re-Inventive Institution and explores how gym members make sense and give meaning to their exercise regime",
+		text_action_text: "",
+		user: nico)
+health2.photo.attach(io: URI.open('https://incredibleshrinkingbeardedman.files.wordpress.com/2019/07/34fd2387e6af2665b783af455966de2a.jpg'), filename: 'health2.jpg' , content_type: 'image/jpg')
+health2.save!
+
+entrepreneur1 = Post.new(title: "Why the Lean Start-Up Changes Everything",
+		description: "Launching a new enterprise—whether it’s a tech start-up, a small business, or an initiative within a large corporation—has always been a hit-or-miss proposition.",
+		text_action_text: "",
+		user: nico)
+entrepreneur1.photo.attach(io: URI.open('https://iq.opengenus.org/content/images/2019/12/tesla_1.png'), filename: 'entrepreneur.jpg' , content_type: 'image/jpg')
+entrepreneur1.save!
+
+socio1 = Post.new(title: "How will society keep human labor relevant in an era of increasing automation?",
+		description: "AI is changing the game",
+		text_action_text: "",
+		user: nico)
+socio1.photo.attach(io: URI.open('https://media-exp1.licdn.com/dms/image/C4E12AQE0TAMpLO1L4A/article-inline_image-shrink_1000_1488/0/1524167545936?e=1632960000&v=beta&t=YZdHeYEUeLokx1yEUi10vbFsUnt0qgFnvSNUwzZ05cE'), filename: 'socio1.jpg' , content_type: 'image/jpg')
+socio1.save!
+
+business2 = Post.new(title: "The Best Business Blogs Every Entrepreneur Should Be Reading",
+		description: "On the internet, an endless source of industry insights, news and tips are at your fingertips - but how do you know which are worth reading? Here are the top business blogs every entrepreneur should stay on top of.",
+		text_action_text: "",
+		user: nico)
+business2.photo.attach(io: URI.open('https://miro.medium.com/max/1000/1*qVGmZn-3Npku-1qdU4-KHg.jpeg'), filename: 'business2.jpg' , content_type: 'image/jpg')
+business2.save!
+
+
 
 
 #POST TAGS SEEDS
-business1.tags << [tag6, tag9]
+business1.tags << [tag1]
 business1.save
 
-philosophy1.tags << [tag1, tag2]
+philosophy1.tags << [tag8]
 philosophy1.save
 
-health1.tags << [tag1, tag10]
+health1.tags << [tag10]
 health1.save
+
+tech1.tags << [tag2]
+tech1.save
+
+finance1.tags << [tag3]
+finance1.save
+
+philo2.tags << [tag8]
+philo2.save
+
+science1.tags << [tag5]
+science1.save
+
+psycho1.tags << [tag6]
+psycho1.save
+
+philo3.tags << [tag8, tag6]
+philo3.save
+
+health2.tags << [tag10]
+health2.save
+
+entrepreneur1.tags << [tag4]
+entrepreneur1.save
+
+socio1.tags << [tag7]
+socio1.save
+
+business2.tags << [tag1, tag4]
+business2.save
 
 puts "New stuff added successfully"
