@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h4 style="padding-top: 5px; padding-bottom: 5px;">Share your Mood 🚀</h4>
+  <h4 style="margin-bottom: 20px; margin-top: 10px; padding-top: 5px; padding-bottom: 5px;"><strong>Share your Mood 🚀</strong></h4>
 
   <%= simple_form_for [ @user ], url: user_updatestatus_path, :method => :put do |f| %>
     <%= f.rich_text_area :status_action_text %>
