@@ -6,7 +6,7 @@
     <%= f.input :description, placeholder: "A short description of your post", label: "Description (max. 180 characters)", input_html: { maxlength: 140, class: 'new-searchbar' } %>
     <%= f.rich_text_area :text_action_text, placeholder: "Your insight", input_html: { class: 'new-searchbar' } %>
     <%# <%= f.input :category, collection: Post.categories.keys %>
-    <%= f.input :category,
+    <%# <%= f.input :category,
               as: :radio_buttons,
               collection_wrapper_tag: 'div',
               collection_wrapper_class: 'category-wrapper',
@@ -31,7 +31,7 @@
 <br>
 
 <nav class="menu">
-    <a href="<%= posts_path %>" class="menu-item">
+    <a href="<%= root_path %>" class="menu-item">
       <span class="material-icons"><i class="fas fa-bolt" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
