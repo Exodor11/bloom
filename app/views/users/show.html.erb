@@ -45,7 +45,9 @@
       <% if @user == @users.first %>
         <p style="text-align: center;"><small><%= "@founder" %></small></p>
       <% else %>
-        <p style="text-align: center; font-style: italic;"><small> Invited by: <%= @previous_user.first_name %></small><small> <%= @previous_user.last_name %></small></p>
+        <div style="text-align: center; font-size: 12px; font-style: italic">
+          <a style="text-decoration: none; color: black" href="<%= user_path(@previous_user) %>">Invited by: <%= @previous_user.first_name %> <%= @previous_user.last_name %></a>
+        </div>  
       <% end %>
 
 
