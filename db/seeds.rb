@@ -28,7 +28,7 @@ tag10 = Tag.create(name:"🥦 health", category:"health")
 #USER SEEDS + AVATAR
 
 marc = User.new(email: "marc@guilde.com", first_name: 'Marc', last_name: "L'Eplattenier", 
-			bio_action_text: 'Busy building a life I do not need to escape from', 
+			bio_action_text: '<div>🌎 Busy building a life I do not need to escape from<br>💪🏻 Full-time nerd &amp; Business Student<br>🎙️: Podcast Co-Host</div>', 
 			contact_action_text: 'I am an introvert so please reach out to me on <a href="https://www.linkedin.com/in/mleplattenier/">LinkedIn</a> 🤓',
 			status_action_text: 'Status: Coming back to St. Gallen soon, let us go mastermind together 🤓', 
 			password: '12345678', password_confirmation: '12345678')
