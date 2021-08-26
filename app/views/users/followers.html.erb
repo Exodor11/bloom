@@ -1,4 +1,4 @@
-<h1 style="text-align: center; margin-top: 4%;">followers</h1>
+<h1 style="text-align: center; margin-top: 4%;">My Followers</h1>
 
 
 <div class="container">
@@ -10,7 +10,7 @@
             <img src="<%= cl_image_path follower.photo.key, height: 300, crop: :fill %>" alt="user" />
         <% end %>
 
-        <div class="card-product-infos">
+        <div class="card-product-infos ml-3">
           <h2><%= follower.first_name %> <%= follower.last_name %></h2>
           <p><%= follower.bio %></p>
           </div>

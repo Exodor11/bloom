@@ -1,5 +1,5 @@
 <!-- <h1 style="text-align: center; margin-top: 4%;"><%= @user.first_name %> <%= @user.last_name %>'s followings</h1> -->
-<h1 style="text-align: center; margin-top: 4%;">followings</h1>
+<h1 style="text-align: center; margin-top: 4%;">My Followings</h1>
 <div class="container">
   <hr>
   <% @followings.each do |following| %>
@@ -9,7 +9,7 @@
             <img src="<%= cl_image_path following.photo.key, height: 300, crop: :fill %>" alt="user" />
         <% end %>
 
-        <div class="card-product-infos">
+        <div class="card-product-infos ml-3">
           <h2><%= following.first_name %> <%= following.last_name %></h2>
           <p><%= following.bio %></p>
           </div>
