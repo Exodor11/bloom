@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
     @user = User.find(params[:id])
+    @previous_user = User.find_by(id: (@user.id - 1))
     @posts = @user.posts
   end
 
