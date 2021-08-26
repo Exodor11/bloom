@@ -1,6 +1,6 @@
 <div class="container">
 <br>
-  <h2 style="padding-bottom: 5px;">Drop your insight 🚀</h2>
+  <h4 style="margin-bottom: 20px;"><strong>Drop your insight 🚀</strong></h4>
   <%= simple_form_for [ @post ] do |f| %>
     <%= f.input :title, placeholder: "Your post's title", label: "Title (max. 120 characters)", input_html: { maxlength: 120, class: 'new-searchbar' } %>
     <%= f.input :description, placeholder: "A short description of your post", label: "Description (max. 180 characters)", input_html: { maxlength: 140, class: 'new-searchbar' } %>
