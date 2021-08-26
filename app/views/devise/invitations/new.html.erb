@@ -1,7 +1,7 @@
 <div class="container mt-2">
   <h2><%= t "devise.invitations.new.header" %></h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }, data: { confirm: "Are you sure that this person is the right one? You will only have 1 invitation left." }) do |f| %>
     <%= f.error_notification %>
 
     <% resource.class.invite_key_fields.each do |field| -%>

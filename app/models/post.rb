@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :text_action_text, presence: true
+  # validates :text_action_text, presence: true
 
   has_one_attached :photo
 
