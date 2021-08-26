@@ -1,6 +1,12 @@
-<h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1>
+<!-- <h1 style="text-align: center; margin-top: 4%;">Daily Insights</h1> -->
+<% if @my_mix.count == 0 %>
+  <h1 class="search-result-text">No results match your criteria</h1>
+  <h3 class="search-result-text">Sorry about that :/</h3>
+<% else %>
+<% end %>
 
-<div class="container">
+
+<!-- <div class="container"> -->
   <% @my_mix.each do |post| %>
     <div class="card">
         <div class="card-header">
@@ -13,7 +19,7 @@
 
         <div class="tags">
           <% post.tags.each do |tag| %>
-            <span class="tag tag-<%=tag.name%>"><%= tag.name %></span>
+            <span class="tag tag-<%=tag.name.first%>"><%= tag.name %></span>
           <% end %>
         </div>
 
@@ -29,21 +35,22 @@
                 <img src="<%= cl_image_path post.user.photo.key, height: 300, crop: :fill %>" alt="user" />
               <% end %>
             </a>
-            <h5 style="font-size: 14px;"> <%= post.user.first_name %></h5>
-
+            <h5 style="font-size: 14px;"> <%= post.user.first_name%> <%= post.user.last_name %></h5>
+            <!-- <h5 style="font-size: 14px;"><span><%= post.user.first_name%> </span><span><%= post.user.last_name%></span></h5> -->
           </div>
 
         </div>
     </div>
   <% end %>
-</div>
+<!-- </div> -->
+
 
 <br>
 <br>
 <br>
 
 <nav class="menu">
-    <a href="<%= posts_path %>" class="menu-item">
+    <a href="<%= root_path %>" class="menu-item">
       <span class="material-icons"><i class="fab fa-laravel" style="font-size: 20px"></i></span>
       <span class="menu-item-label">Daily insights</span>
     </a>
