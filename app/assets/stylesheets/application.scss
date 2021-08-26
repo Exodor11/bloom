@@ -24,4 +24,10 @@ trix-editor.form-control {
 trix-editor {
   background-color: white;
   margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+trix-toolbar.trix-button-group {
+  border-radius: 5px;
+  background-color: alicebleu;
 }
