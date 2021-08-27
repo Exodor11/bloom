@@ -4,7 +4,7 @@
   <h3 class="search-result-text">Sorry about that :/</h3>
 <% else %>
   <div class="container">
-    <p><%= @posts.count %> results found</p>
+    <p><%= @posts.count %> <%= "result".pluralize(@posts.count) %> found</p>
   </div>
 <% end %>
 
