@@ -47,7 +47,7 @@
       <% else %>
         <div style="text-align: center; font-size: 12px; font-style: italic">
           <a style="text-decoration: none; color: black" href="<%= user_path(@previous_user) %>">Invited by: <%= @previous_user.first_name %> <%= @previous_user.last_name %></a>
-        </div>  
+        </div>
       <% end %>
 
 
@@ -74,9 +74,9 @@
     <div style="display: flex; justify-content: center; margin-top: 10px;"class="follow-centered">
       <% if current_user != @user %>
         <% if current_user.followings.find_by(id: @user.id).present? %>
-          <button class="following"><a style="text-decoration: none;" class="following" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
+          <button class="follow"><a style="text-decoration: none;" data-method="delete" href="<%= user_unfollow_path(@user) %>">following</a></button>
         <% else %>
-          <button class="follow"><a style="text-decoration: none;" data-method="post" href="<%= user_follow_path(@user) %>">follow</a></button>
+          <button class="following"><a style="text-decoration: none;" class="following" data-method="post" href="<%= user_follow_path(@user) %>">follow</a></button>
         <% end %>
       <% end %>
     </div>
@@ -85,9 +85,9 @@
       <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Status: </h4><%= @user.status_action_text %></article> -->
     <!--   <hr> -->
     <br>
-      <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
+      <article style="font-size: 85%;"><h4 style="font-size: 90%; font-style:italic;">About me: </h4><%= @user.bio_action_text %></article>
     <hr>
-    <article style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
+    <article style="font-size: 85%;"><h4 style="font-size: 90%; font-style:italic;">Connect with me here: </h4><%= @user.contact_action_text %></article>
     <hr>
     <h4 style="font-size: 80%;"><h4 style="font-size: 90%; font-style:italic;"> My tags:</h4>
     <div class="tags">
