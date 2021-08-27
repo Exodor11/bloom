@@ -117,13 +117,13 @@ romain.photo.attach(io: URI.open('https://res.cloudinary.com/wagon/image/upload/
 romain.save!
 
 
-marc.tags << [tag2, tag8]
+marc.tags << [tag2, tag4, tag8]
 marc.save
 
-nico.tags << [tag4, tag9]
+nico.tags << [tag2, tag4, tag9]
 nico.save
 
-nathan.tags << [tag2, tag4]
+nathan.tags << [tag1, tag2, tag4]
 nathan.save
 
 titus.tags << [tag8, tag9]
@@ -163,12 +163,13 @@ romain.save
 
 # Romain CONTACTS
 Contact.create(follower: titus, following: romain)
-Contact.create(follower: marc, following: romain)
-Contact.create(follower: nico, following: romain)
+Contact.create(follower: martin, following: romain)
+Contact.create(follower: colin, following: romain)
 Contact.create(follower: hadrien, following: romain)
+Contact.create(follower: alexandre, following: romain)
 
-Contact.create(follower: romain, following: marc)
-Contact.create(follower: romain, following: nico)
+Contact.create(follower: romain, following: martin)
+Contact.create(follower: romain, following: colin)
 Contact.create(follower: romain, following: hadrien)
 Contact.create(follower: romain, following: titus)
 
@@ -178,6 +179,7 @@ Contact.create(follower: titus, following: nathan)
 Contact.create(follower: marc, following: nathan)
 Contact.create(follower: nico, following: nathan)
 Contact.create(follower: hadrien, following: nathan)
+Contact.create(follower: colin, following: nathan)
 
 Contact.create(follower: nathan, following: marc)
 Contact.create(follower: nathan, following: nico)
@@ -189,6 +191,10 @@ Contact.create(follower: titus, following: marc)
 Contact.create(follower: colin, following: marc)
 Contact.create(follower: nico, following: marc)
 Contact.create(follower: hadrien, following: marc)
+Contact.create(follower: alexandre, following: marc)
+Contact.create(follower: pablo, following: marc)
+Contact.create(follower: richard, following: marc)
+Contact.create(follower: oscar, following: marc)
 
 Contact.create(follower: marc, following: nathan)
 Contact.create(follower: marc, following: nico)
@@ -200,6 +206,10 @@ Contact.create(follower: titus, following: nico)
 Contact.create(follower: colin, following: nico)
 Contact.create(follower: marc, following: nico)
 Contact.create(follower: hadrien, following: nico)
+Contact.create(follower: alexandre, following: nico)
+Contact.create(follower: pablo, following: nico)
+Contact.create(follower: richard, following: nico)
+Contact.create(follower: oscar, following: nico)
 
 Contact.create(follower: nico, following: nathan)
 Contact.create(follower: nico, following: marc)
@@ -365,7 +375,7 @@ psycho1.save
 philo3.tags << [tag8, tag6, tag4]
 philo3.save
 
-health2.tags << [tag10, tag5]
+health2.tags << [tag10, tag6]
 health2.save
 
 entrepreneur1.tags << [tag4, tag1]
@@ -403,6 +413,7 @@ PostUpvoted.create(user: oscar, post: health2)
 PostUpvoted.create(user: pablo, post: health2)
 PostUpvoted.create(user: titus, post: health2)
 PostUpvoted.create(user: richard, post: health2)
+PostUpvoted.create(user: colin, post: health2)
 
 
 puts "New stuff added successfully"
